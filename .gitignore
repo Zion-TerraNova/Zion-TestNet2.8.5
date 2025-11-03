@@ -1,5 +1,6 @@
 # Ignore local website build/content
 websiteV2/
+.web-temp/
 
 # macOS noise
 .DS_Store
