@@ -2,7 +2,9 @@
 
 **Release Date:** December 3, 2024  
 **Release Type:** Security-Hardened Binary Distribution  
-**Architecture:** Linux x86_64
+**Platforms:** 
+- **Linux x86_64** (native binaries)
+- **Windows / macOS** (Docker - recommended for all platforms)
 
 ## 🔐 Security-First Release
 
@@ -65,6 +67,8 @@ cd zion-2.8.5-linux-x86_64
 
 ### Option 2: Docker (Recommended)
 
+**✅ Works on ALL platforms: Linux, Windows, macOS**
+
 ```bash
 # Pull and run node
 docker pull yose144/zion-node:2.8.5-secure
@@ -84,6 +88,9 @@ docker run -d \
   --link zion-node \
   yose144/zion-pool:2.8.5-secure
 ```
+
+**Windows (PowerShell) / macOS (Terminal):**
+Same commands work! Just install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
 **Docker Hub:** https://hub.docker.com/u/yose144
 
@@ -168,19 +175,20 @@ cd xmrig-6.21.0
 
 ## 🛠️ System Requirements
 
-**Minimum:**
-- OS: Ubuntu 20.04+ / Debian 11+ / RHEL 8+
-- CPU: 2 cores
-- RAM: 4GB
-- Disk: 20GB SSD
-- Network: 10 Mbps
+**Docker (Recommended - All Platforms):**
+- OS: Windows 10/11, macOS 10.15+, or Linux
+- Docker Desktop (Windows/Mac) or Docker Engine (Linux)
+- RAM: 4GB minimum, 8GB recommended
+- Disk: 20GB free space
 
-**Recommended:**
-- OS: Ubuntu 24.04 LTS
-- CPU: 4+ cores
-- RAM: 8GB+
-- Disk: 100GB NVMe SSD
-- Network: 100 Mbps+
+**Linux Native Binaries:**
+- OS: Ubuntu 20.04+ / Debian 11+ / RHEL 8+
+- CPU: 2 cores minimum, 4+ recommended
+- RAM: 4GB minimum, 8GB+ recommended
+- Disk: 20GB SSD, 100GB NVMe recommended
+- Network: 10 Mbps minimum, 100 Mbps+ recommended
+
+**Note:** Native binaries for Windows/macOS planned for v2.8.6. Use Docker for now.
 
 ## 📚 Documentation
 
