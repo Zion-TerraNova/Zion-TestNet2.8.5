@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZION TestNet Pool Setup: how to run a mining pool, configuration, Stratum, monitoring." />
+  <title>Pool Setup · ZION TestNet Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <div class="logo">
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 10L90 35V65L50 90L10 65V35L50 10Z" stroke="currentColor" stroke-width="4" fill="none"/>
+            <circle cx="50" cy="50" r="15" fill="currentColor" opacity="0.3"/>
+            <path d="M50 25V75M25 50H75" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <a href="../" class="brand-name">ZION</a>
+          <span class="brand-version">TestNet 2.8.5 · Docs</span>
+        </div>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="setup.html">Setup</a></li>
+        <li><a href="api-reference.html">API</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top:2rem;padding-bottom:2rem;">
+    <div class="section-header">
+      <h1>Pool Setup</h1>
+      <p>Run a mining pool for the ZION TestNet: configuration, Stratum, and monitoring.</p>
+    </div>
+
+    <section class="content">
+      <h2 id="overview">Overview</h2>
+      <p>A pool aggregates miners to reduce variance. You will run a Stratum server, track shares, and pay miners proportionally.</p>
+
+      <h2 id="requirements">Requirements</h2>
+      <ul>
+        <li>Server with stable network and static IP</li>
+        <li>SSD storage, 8–16 GB RAM, multi-core CPU</li>
+        <li>Public ports open (e.g., 3333/tcp for Stratum)</li>
+      </ul>
+
+      <h2 id="config">Configuration</h2>
+      <ol class="numbered">
+        <li>Run a full node in testnet mode and keep it in sync.</li>
+        <li>Configure Stratum endpoint (hostname, port, difficulty targeting).</li>
+        <li>Implement share validation and block submission to node.</li>
+        <li>Set payout scheme (PPLNS/PPS) and payout intervals.</li>
+      </ol>
+
+      <h2 id="stratum">Stratum Protocol</h2>
+      <p>Protocol details are evolving on testnet. Start with standard Stratum semantics and adapt to testnet updates. Announcements will be in the repository.</p>
+
+      <h2 id="monitoring">Monitoring</h2>
+      <ul>
+        <li>Track hashrate, shares, orphan rate, and connected miners.</li>
+        <li>Alert on stale connections and high reject rates.</li>
+        <li>Publish a simple pool status page for miners.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom"><p>&copy; 2025 ZION Blockchain</p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
