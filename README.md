@@ -58,21 +58,76 @@ cd zion-2.8.5-linux-x86_64/bin
 # Download ZIP from releases page, extract, and run zion-node.exe
 ```
 
-### Option 2: Docker (Easiest)
+### Option 2: Docker (Easiest) 🔒 SECURE BINARY-ONLY IMAGES
+
+**✅ Security:** These images contain ONLY compiled binaries, NO source code. Your testnet coins are protected.
 
 ```bash
-# Pull and run node
-docker pull zionterranova/zion-node:2.8.5
-docker run -d -p 8332:8332 -p 9333:9333 zionterranova/zion-node:2.8.5
+# Pull and run node (blockchain + RPC server)
+docker pull yose144/zion-node:2.8.5-secure
+docker run -d \
+  --name zion-node \
+  -p 8545:8545 \
+  -p 8333:8333 \
+  -p 8080:8080 \
+  -v zion-data:/home/zion/.zion/data \
+  yose144/zion-node:2.8.5-secure
 
-# Pull and run mining pool
-docker pull zionterranova/zion-pool:2.8.5
-docker run -d -p 3333:3333 -e ZION_POOL_WALLET="your_address" zionterranova/zion-pool:2.8.5
+# Pull and run mining pool (Stratum server)
+docker pull yose144/zion-pool:2.8.5-secure
+docker run -d \
+  --name zion-pool \
+  -p 3333:3333 \
+  -p 8181:8181 \
+  -e POOL_RPC_HOST=zion-node \
+  -e POOL_RPC_PORT=8545 \
+  --link zion-node \
+  yose144/zion-pool:2.8.5-secure
 
-# Start mining
-docker pull zionterranova/zion-miner:2.8.5
-docker run -d -e ZION_WALLET="your_address" -e ZION_POOL="pool.zionterranova.com:3333" zionterranova/zion-miner:2.8.5
+# Check node status
+curl http://localhost:8545/
+
+# Check pool stats
+curl http://localhost:8181/api/stats
+
+# Mine with XMRig (CPU mining)
+xmrig -o localhost:3333 -u YOUR_ZION_ADDRESS -p x --algo rx/0
 ```
+
+**Docker Compose (Full Stack):**
+```bash
+wget https://raw.githubusercontent.com/Zion-TerraNova/Zion-TestNet2.8.5/main/docker-compose.yml
+docker-compose up -d
+```
+
+**🔐 Docker Image Security Verification:**
+
+Our images are binary-only for maximum security. Verify integrity:
+
+```bash
+# Verify SHA256 digests (Docker Hub)
+docker images --digests | grep yose144
+
+# Expected output:
+# yose144/zion-node   2.8.5-secure   sha256:068245ccc9bdb...   141MB
+# yose144/zion-pool   2.8.5-secure   sha256:9956e23c4df2...   134MB
+
+# Test for source code leakage (should return empty)
+docker run --rm yose144/zion-node:2.8.5-secure find / -name "*.py" 2>/dev/null | grep -v "^/usr/share"
+
+# Verify no /app directory (should fail)
+docker run --rm yose144/zion-node:2.8.5-secure ls /app 2>&1 | grep "No such file"
+```
+
+**📦 Docker Hub Links:**
+- Node Image: https://hub.docker.com/r/yose144/zion-node
+- Pool Image: https://hub.docker.com/r/yose144/zion-pool
+
+**Image Details:**
+- Base: Ubuntu 24.04 LTS
+- Size: Node 141MB, Pool 134MB (98% smaller than development images)
+- Architecture: Binary-only, no source code included
+- User: Non-root (UID 10001)
 
 ### Option 3: SDK Integration
 
