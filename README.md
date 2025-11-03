@@ -241,6 +241,8 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 - 🧪 Test on different platforms
 - 💡 Suggest features via [Discussions](https://github.com/Zion-TerraNova/Zion-TestNet2.8.5/discussions)
 
+**Code of Conduct:** [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+
 ## 📞 Support & Community
 
 - **Website:** https://www.zionterranova.com

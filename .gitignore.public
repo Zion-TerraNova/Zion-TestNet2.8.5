@@ -1,0 +1,19 @@
+# Public branch .gitignore (stricter for public repo)
+*.db
+*.sqlite*
+.env*
+.pem
+*.key
+venv/
+.venv/
+node_modules/
+build/
+dist/
+__pycache__/
+*.pyc
+*.log
+Dockerfile*
+*.tar.gz
+*.zip
+bin/
+.DS_Store

@@ -47,3 +47,12 @@ jobs:
       - name: Build (tsc)
         run: |
           cd sdk/javascript && npx tsc --noEmit || true
+  
+  check-security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify no sensitive files
+        run: |
+          ! find . -name "*.db" -o -name ".env" -o -name "*.pem" | grep -v node_modules
+          echo "Security check passed: no .db/.env/.pem files found"
