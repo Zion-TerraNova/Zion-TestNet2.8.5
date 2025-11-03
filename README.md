@@ -137,13 +137,17 @@ console.log(`Block height: ${info.height}`);
 
 ## 📚 Documentation
 
-- **[Whitepaper LITE](docs/WHITEPAPER_LITE_2.8.5.md)** - Complete overview (CZ version available)
-- **[ZION OASIS Integration](docs/ZION_OASIS_INTEGRATION.md)** - AAA MMORPG details
-- **[COSMIC MAP Integration](docs/COSMIC_MAP_INTEGRATION.md)** - 15D consciousness framework
-- **[Sacred Library API](docs/SACRED_LIBRARY_API_REFERENCE.md)** - 39,036 lines of wisdom
-- **[Golden Egg Smart Contracts](docs/GOLDEN_EGG_SMART_CONTRACTS.md)** - 1B ZION prize pool
-- **[Mining Guide](docs/MINING_GUIDE.md)** - Complete mining setup
-- **[RPC API Reference](docs/RPC_API_REFERENCE.md)** - JSON-RPC documentation
+- Quick start: [docs/QUICK_START.md](docs/QUICK_START.md)
+- Mining: [docs/MINING_GUIDE.md](docs/MINING_GUIDE.md)
+- RPC API: [docs/RPC_API.md](docs/RPC_API.md)
+- Docker: [docs/DOCKER_GUIDE.md](docs/DOCKER_GUIDE.md)
+- SDK Python: [docs/SDK_PYTHON.md](docs/SDK_PYTHON.md)
+- SDK JavaScript: [docs/SDK_JAVASCRIPT.md](docs/SDK_JAVASCRIPT.md)
+- FAQ: [docs/FAQ.md](docs/FAQ.md) · Troubleshooting: [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)
+- Security policy: [docs/SECURITY.md](docs/SECURITY.md)
+- Changelog: [docs/CHANGELOG.md](docs/CHANGELOG.md)
+
+2.8.5 specifické dokumenty najdete v `docs/2.8.5/`.
 
 ## 🔧 Building from Source
 

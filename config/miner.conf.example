@@ -1,0 +1,5 @@
+# [miner]
+threads=4
+pool=pool.zionterranova.com:3333
+wallet=ZION_wallet_adresa
+algo=randomx

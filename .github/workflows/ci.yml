@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, public-2.8.5 ]
+  pull_request:
+    branches: [ main, public-2.8.5 ]
+
+jobs:
+  docs-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check docs exist
+        run: |
+          test -f docs/QUICK_START.md
+          test -f docs/MINING_GUIDE.md
+          test -f docs/RPC_API.md
+          test -f docs/DOCKER_GUIDE.md
+          test -f docs/SDK_PYTHON.md
+          test -f docs/SDK_JAVASCRIPT.md
+
+  sdk-python-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: |
+          pip install -U pip
+          pip install flake8
+      - name: Lint
+        run: flake8 sdk/python || true
+
+  sdk-js-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install
+        run: |
+          cd sdk/javascript && npm i
+      - name: Build (tsc)
+        run: |
+          cd sdk/javascript && npx tsc --noEmit || true

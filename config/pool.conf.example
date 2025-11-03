@@ -1,0 +1,6 @@
+# [pool]
+name=Your ZION Pool
+wallet=ZION_wallet_adresa
+fee_percent=1.0
+rpc=http://zion-node:8332
+stratum_port=3333

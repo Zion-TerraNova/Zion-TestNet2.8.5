@@ -1,0 +1,8 @@
+# [node]
+# Základní konfigurace nodu (testnet)
+
+rpc_port=8545
+p2p_port=8333
+default_algorithm=randomx
+testnet=1
+network_id=milky-way-2.8.5
