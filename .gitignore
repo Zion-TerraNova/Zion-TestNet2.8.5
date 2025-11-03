@@ -1,0 +1,10 @@
+# Ignore local website build/content
+websiteV2/
+
+# macOS noise
+.DS_Store
+
+# Node and tooling (future-proofing if used locally)
+node_modules/
+dist/
+build/
