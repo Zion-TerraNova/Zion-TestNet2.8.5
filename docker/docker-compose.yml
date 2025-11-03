@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  # ZION Blockchain Node
+  zion-node:
+    image: zionterranova/zion-node:2.8.5
+    container_name: zion-node
+    restart: unless-stopped
+    ports:
+      - "8332:8332"  # RPC API
+      - "8545:8545"  # WebSocket
+      - "9333:9333"  # P2P
+    volumes:
+      - zion-node-data:/data
+    environment:
+      - ZION_NETWORK=testnet
+      - ZION_LOG_LEVEL=info
+    networks:
+      - zion-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8332/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # ZION Mining Pool
+  zion-pool:
+    image: zionterranova/zion-pool:2.8.5
+    container_name: zion-pool
+    restart: unless-stopped
+    ports:
+      - "3333:3333"  # Stratum (primary)
+      - "3334:3334"  # Stratum (yescrypt)
+      - "8080:8080"  # Pool dashboard
+      - "9090:9090"  # Prometheus metrics
+    volumes:
+      - zion-pool-data:/data
+    environment:
+      - ZION_POOL_WALLET=${ZION_POOL_WALLET}
+      - ZION_POOL_FEE=${ZION_POOL_FEE:-1.0}
+      - ZION_BLOCKCHAIN_RPC=http://zion-node:8332
+    depends_on:
+      - zion-node
+    networks:
+      - zion-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/stats"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # ZION Miner (optional - for testing)
+  zion-miner:
+    image: zionterranova/zion-miner:2.8.5
+    container_name: zion-miner
+    restart: unless-stopped
+    environment:
+      - ZION_WALLET=${ZION_MINER_WALLET}
+      - ZION_POOL=zion-pool:3333
+      - ZION_THREADS=${ZION_MINER_THREADS:-2}
+    depends_on:
+      - zion-pool
+    networks:
+      - zion-network
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 2G
+
+volumes:
+  zion-node-data:
+    driver: local
+  zion-pool-data:
+    driver: local
+
+networks:
+  zion-network:
+    driver: bridge
