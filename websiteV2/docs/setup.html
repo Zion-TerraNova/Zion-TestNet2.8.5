@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZION TestNet Setup: install, configure node, and wallet setup on Windows, Linux, macOS." />
+  <title>Setup · ZION TestNet Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <div class="logo">
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 10L90 35V65L50 90L10 65V35L50 10Z" stroke="currentColor" stroke-width="4" fill="none"/>
+            <circle cx="50" cy="50" r="15" fill="currentColor" opacity="0.3"/>
+            <path d="M50 25V75M25 50H75" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <a href="../" class="brand-name">ZION</a>
+          <span class="brand-version">TestNet 2.8.5 · Docs</span>
+        </div>
+      </div>
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./">Docs Home</a></li>
+        <li><a href="api-reference.html">API</a></li>
+        <li><a href="../wiki/">Wiki</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top:2rem;padding-bottom:2rem;">
+    <div class="section-header">
+      <h1>Setup</h1>
+      <p>System requirements, installation, node configuration, and wallet setup.</p>
+    </div>
+
+    <section class="content">
+      <h2 id="requirements">System Requirements</h2>
+      <ul>
+        <li>CPU: 2+ cores (4+ recommended for mining with RandomX)</li>
+        <li>RAM: 8 GB (16 GB recommended)</li>
+        <li>Storage: 20 GB free (SSD recommended)</li>
+        <li>Network: Stable broadband connection</li>
+        <li>OS: Windows, Linux, or macOS</li>
+      </ul>
+
+      <h2 id="install">Installation</h2>
+      <h3>Windows</h3>
+      <ol class="numbered">
+        <li>Download the latest TestNet release (ZIP) from <a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5/releases" target="_blank">GitHub Releases</a>.</li>
+        <li>Extract and open a terminal in the folder.</li>
+        <li>Run: <span class="code-inline">zion-node.exe --testnet --rpc-port 8545</span></li>
+      </ol>
+
+      <h3>Linux</h3>
+      <ol class="numbered">
+        <li>Download tarball from Releases.</li>
+        <li>Extract and mark binaries executable: <span class="code-inline">chmod +x zion-node zion-miner</span></li>
+        <li>Run: <span class="code-inline">./zion-node --testnet --rpc-port 8545</span></li>
+      </ol>
+
+      <h3>macOS</h3>
+      <ol class="numbered">
+        <li>Download tarball from Releases.</li>
+        <li>If blocked by Gatekeeper, allow in System Settings → Privacy & Security.</li>
+        <li>Run: <span class="code-inline">./zion-node --testnet --rpc-port 8545</span></li>
+      </ol>
+
+      <h2 id="config">Node Configuration</h2>
+      <p>Create a config file (optional) or pass flags via CLI. Example minimal config:</p>
+      <div class="code-block"><code>{
+  "network": "testnet",
+  "rpc": { "enabled": true, "port": 8545 }
+}</code></div>
+
+      <h2 id="wallet">Wallet Setup</h2>
+      <ol class="numbered">
+        <li>Create a new wallet and securely store the seed phrase.</li>
+        <li>Connect your miner to the wallet address.</li>
+        <li>Test sending a small transaction on testnet.</li>
+      </ol>
+
+      <h2 id="next">Next Steps</h2>
+      <ul>
+        <li>Read the <a href="../wiki/mining-guide.html">Mining Guide</a>.</li>
+        <li>Explore <a href="api-reference.html">API Reference</a>.</li>
+        <li>View <a href="../index.html#stats">Live Stats</a> on the homepage.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom"><p>&copy; 2025 ZION Blockchain</p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
