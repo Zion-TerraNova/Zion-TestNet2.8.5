@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZION TestNet Documentation - Comprehensive technical guidance for consciousness-based blockchain development." />
+  <title>ZION Documentation · TestNet 2.8.5</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/icons/zion.gif" type="image/gif">
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .docs-hero {
+      background: linear-gradient(135deg, rgba(0,255,136,0.05) 0%, rgba(0,255,136,0.02) 100%);
+      border-bottom: 1px solid rgba(0,255,136,0.2);
+      padding: 4rem 0 3rem;
+      margin-bottom: 3rem;
+    }
+    .docs-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--primary) 0%, #00cc77 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .docs-hero-desc {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 800px;
+      line-height: 1.6;
+    }
+    .docs-section {
+      margin-bottom: 4rem;
+    }
+    .docs-section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .docs-section-title::before {
+      content: '';
+      width: 4px;
+      height: 2rem;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    .doc-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .doc-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(0,255,136,0.15);
+      border-radius: 12px;
+      padding: 1.75rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: block;
+    }
+    .doc-card:hover {
+      border-color: var(--primary);
+      background: rgba(0,255,136,0.03);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,255,136,0.15);
+    }
+    .doc-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .doc-card h3 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+    .doc-card p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .doc-card-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: var(--primary);
+      opacity: 0.8;
+    }
+    @media (max-width: 768px) {
+      .docs-hero h1 { font-size: 2rem; }
+      .docs-hero-desc { font-size: 1.125rem; }
+      .doc-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="../" class="logo">
+          <img src="../assets/icons/zion.gif" alt="ZION Logo" width="40" height="40">
+        </a>
+        <div class="brand-text">
+          <a href="../" class="brand-name">ZION</a>
+          <span class="brand-version">TestNet 2.8.5</span>
+        </div>
+      </div>
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">Docs <span class="chevron"></span></button>
+          <div class="dropdown-menu">
+            <a href="index.html">Overview</a>
+            <a href="getting-started.html">Getting Started</a>
+            <a href="setup.html">Setup Guide</a>
+            <a href="mining-guide.html">Mining Guide</a>
+            <a href="consciousness-levels.html">Consciousness Levels</a>
+            <a href="api-reference.html">API Reference</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">Network <span class="chevron"></span></button>
+          <div class="dropdown-menu">
+            <a href="testnet-info.html">TestNet Info</a>
+            <a href="pool-setup.html">Pool Setup</a>
+            <a href="technical-specs.html">Technical Specs</a>
+            <a href="version-history.html">Version History</a>
+            <a href="roadmap.html">Roadmap</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">OASIS <span class="chevron"></span></button>
+          <div class="dropdown-menu">
+            <a href="oasis.html">Overview</a>
+          </div>
+        </li>
+        <li><a href="../dashboard.html">Dashboard</a></li>
+        <li><a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5" target="_blank" class="nav-btn">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="docs-hero">
+    <div class="container">
+      <h1>Understanding ZION Protocol</h1>
+      <p class="docs-hero-desc">
+        Welcome to the ZION TestNet Developer Documentation. This resource provides comprehensive technical guidance
+        for running nodes, mining, integrating APIs, and understanding the consciousness-based blockchain architecture.
+        ZION combines conventional cryptography with a humanitarian mission and novel mining mechanics that incentivize
+        ethical participation and spiritual growth. Use this guide to build applications and infrastructure that incorporate
+        consciousness levels, community governance, and sustainable blockchain principles.
+      </p>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- Getting Started -->
+    <section class="docs-section">
+      <h2 class="docs-section-title">Getting Started</h2>
+      <div class="doc-cards">
+        <a href="getting-started.html" class="doc-card">
+          <div class="doc-card-icon">🚀</div>
+          <h3>Getting Started</h3>
+          <p>Your first steps on the ZION TestNet. Learn about consciousness mining and set up your environment.</p>
+          <div class="doc-card-meta">
+            <span>5 min read</span>
+          </div>
+        </a>
+
+        <a href="setup.html" class="doc-card">
+          <div class="doc-card-icon">⚙️</div>
+          <h3>Setup Guide</h3>
+          <p>System requirements, installation instructions for Windows/Linux/macOS, and node configuration.</p>
+          <div class="doc-card-meta">
+            <span>10 min read</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Core Documentation -->
+    <section class="docs-section">
+      <h2 class="docs-section-title">Core Documentation</h2>
+      <div class="doc-cards">
+        <a href="whitepaper-lite.html" class="doc-card">
+          <div class="doc-card-icon">📄</div>
+          <h3>Whitepaper Lite</h3>
+          <p>Comprehensive overview of tokenomics, consensus mechanisms, consciousness mining, and governance.</p>
+          <div class="doc-card-meta">
+            <span>15 min read</span>
+          </div>
+        </a>
+
+        <a href="whitepaper-lite-cz.html" class="doc-card">
+          <div class="doc-card-icon">🇨🇿</div>
+          <h3>Whitepaper Lite (CZ)</h3>
+          <p>Česká zkrácená verze whitepaperu ZION 2.8.5. Parametry sítě, vize, Consciousness Mining.</p>
+          <div class="doc-card-meta">
+            <span>15 min read</span>
+          </div>
+        </a>
+
+        <a href="cosmic-map.html" class="doc-card">
+          <div class="doc-card-icon">🌌</div>
+          <h3>Cosmic Map</h3>
+          <p>15D framework vědomí, mapování CL1–CL9, sedm paprsků, vzdělávání a odměny.</p>
+          <div class="doc-card-meta">
+            <span>Concept</span>
+          </div>
+        </a>
+
+        <a href="oasis.html" class="doc-card">
+          <div class="doc-card-icon">🏝️</div>
+          <h3>ZION OASIS</h3>
+          <p>Humanitarian mission, community pillars, architecture overview, and empowerment programs.</p>
+          <div class="doc-card-meta">
+            <span>8 min read</span>
+          </div>
+        </a>
+
+        <a href="testnet-info.html" class="doc-card">
+          <div class="doc-card-icon">🌐</div>
+          <h3>TestNet Info</h3>
+          <p>Network specifications, genesis block details, seed nodes, and faucet information.</p>
+          <div class="doc-card-meta">
+            <span>5 min read</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Mining -->
+    <section class="docs-section">
+      <h2 class="docs-section-title">Mining</h2>
+      <div class="doc-cards">
+        <a href="mining-guide.html" class="doc-card">
+          <div class="doc-card-icon">⛏️</div>
+          <h3>Mining Guide</h3>
+          <p>Choose algorithms (RandomX, Autolykos v2, Cosmic Harmony), configure miners, and optimize performance.</p>
+          <div class="doc-card-meta">
+            <span>12 min read</span>
+          </div>
+        </a>
+
+        <a href="consciousness-levels.html" class="doc-card">
+          <div class="doc-card-icon">🧘</div>
+          <h3>Consciousness Levels</h3>
+          <p>Nine levels of spiritual development with mining multipliers from 1× to 15×.</p>
+          <div class="doc-card-meta">
+            <span>6 min read</span>
+          </div>
+        </a>
+
+        <a href="pool-setup.html" class="doc-card">
+          <div class="doc-card-icon">🏊</div>
+          <h3>Pool Setup</h3>
+          <p>Run a mining pool: server requirements, Stratum protocol, share validation, and monitoring.</p>
+          <div class="doc-card-meta">
+            <span>10 min read</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Reference -->
+    <section class="docs-section">
+      <h2 class="docs-section-title">Reference</h2>
+      <div class="doc-cards">
+        <a href="api-reference.html" class="doc-card">
+          <div class="doc-card-icon">🔌</div>
+          <h3>API Reference</h3>
+          <p>Complete RPC and WebSocket API documentation with JSON-RPC examples and error codes.</p>
+          <div class="doc-card-meta">
+            <span>Technical</span>
+          </div>
+        </a>
+
+        <a href="faq.html" class="doc-card">
+          <div class="doc-card-icon">❓</div>
+          <h3>FAQ</h3>
+          <p>Frequently asked questions about testnet, mining, consciousness levels, and mainnet timeline.</p>
+          <div class="doc-card-meta">
+            <span>Quick answers</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div class="note" style="margin-top:3rem;">
+      <strong>Note:</strong> ZION TestNet 2.8.5 is under active development. Features, parameters, and APIs are subject to change.
+      Track updates in <a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5/releases" target="_blank">GitHub Releases</a>.
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom"><p>&copy; 2025 ZION Blockchain</p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

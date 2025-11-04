@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frequently Asked Questions for ZION TestNet 2.8.5." />
+  <title>FAQ · ZION TestNet Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/icons/zion.gif" type="image/gif">
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    details { 
+      background: rgba(0,255,136,0.03); 
+      border: 1px solid rgba(0,255,136,0.2); 
+      border-radius: 10px; 
+      padding: 1rem 1.25rem; 
+      margin: 0.75rem 0; 
+      transition: all 0.2s ease;
+    }
+    details:hover {
+      background: rgba(0,255,136,0.05);
+      border-color: rgba(0,255,136,0.3);
+    }
+    summary { 
+      cursor: pointer; 
+      font-weight: 600; 
+      color: var(--primary);
+      user-select: none;
+    }
+    details[open] summary {
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(0,255,136,0.2);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="../" class="logo">
+          <img src="../assets/icons/zion.gif" alt="ZION Logo" width="40" height="40">
+        </a>
+        <div class="brand-text">
+          <a href="../" class="brand-name">ZION</a>
+          <span class="brand-version">TestNet 2.8.5</span>
+        </div>
+      </div>
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">Docs <span class="chevron"></span></button>
+          <div class="dropdown-menu">
+            <a href="index.html">Overview</a>
+            <a href="getting-started.html">Getting Started</a>
+            <a href="setup.html">Setup Guide</a>
+            <a href="mining-guide.html">Mining Guide</a>
+            <a href="consciousness-levels.html">Consciousness Levels</a>
+            <a href="api-reference.html">API Reference</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">Network <span class="chevron"></span></button>
+          <div class="dropdown-menu">
+            <a href="testnet-info.html">TestNet Info</a>
+            <a href="pool-setup.html">Pool Setup</a>
+            <a href="technical-specs.html">Technical Specs</a>
+            <a href="version-history.html">Version History</a>
+            <a href="roadmap.html">Roadmap</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">OASIS <span class="chevron"></span></button>
+          <div class="dropdown-menu">
+            <a href="oasis.html">Overview</a>
+          </div>
+        </li>
+        <li><a href="../dashboard.html">Dashboard</a></li>
+        <li><a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5" target="_blank" class="nav-btn">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="docs-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="docs-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Getting Started</div>
+        <ul class="sidebar-nav">
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="setup.html">Setup Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Core Documentation</div>
+        <ul class="sidebar-nav">
+          <li><a href="whitepaper-lite.html">Whitepaper Lite</a></li>
+          <li><a href="oasis.html">ZION OASIS</a></li>
+          <li><a href="testnet-info.html">TestNet Info</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Mining</div>
+        <ul class="sidebar-nav">
+          <li><a href="mining-guide.html">Mining Guide</a></li>
+          <li><a href="consciousness-levels.html">Consciousness Levels</a></li>
+          <li><a href="pool-setup.html">Pool Setup</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Reference</div>
+        <ul class="sidebar-nav">
+          <li><a href="api-reference.html">API Reference</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="docs-content">
+      <h1>Frequently Asked Questions</h1>
+      <p class="hero-description" style="font-size:1.125rem;color:var(--text-secondary);margin-bottom:2rem;">Quick answers to common questions about the testnet.</p>
+
+      <details open>
+        <summary>What is a testnet?</summary>
+        <p>A testnet is a public testing environment for the blockchain. Tokens are for experimentation only and have no monetary value.</p>
+      </details>
+      
+      <details>
+        <summary>How do I get testnet ZION?</summary>
+        <p>Mine on the testnet using supported algorithms or watch for a faucet announcement in the repository. See <a href="mining-guide.html">Mining Guide</a>.</p>
+      </details>
+      
+      <details>
+        <summary>Does testnet ZION have value?</summary>
+        <p>No. Testnet coins are free and valueless, used purely for development and community testing.</p>
+      </details>
+      
+      <details>
+        <summary>When is mainnet?</summary>
+        <p>There is no fixed date. Progress depends on stability, security audits, and community feedback. Track updates in <a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5/releases" target="_blank">releases</a>.</p>
+      </details>
+      
+      <details>
+        <summary>Where can I report bugs or request features?</summary>
+        <p>Open an issue on <a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5/issues" target="_blank">GitHub Issues</a>.</p>
+      </details>
+
+      <details>
+        <summary>What is consciousness mining?</summary>
+        <p>An experimental mechanism that multiplies mining rewards based on spiritual development levels. See <a href="consciousness-levels.html">Consciousness Levels</a> for details.</p>
+      </details>
+
+      <details>
+        <summary>Can I run a pool?</summary>
+        <p>Yes! See the <a href="pool-setup.html">Pool Setup Guide</a> for technical requirements and configuration.</p>
+      </details>
+
+      <details>
+        <summary>Which mining algorithm should I use?</summary>
+        <p>RandomX is CPU-friendly, Autolykos v2 is GPU-optimized, and Cosmic Harmony is experimental. Choose based on your hardware. See <a href="mining-guide.html">Mining Guide</a>.</p>
+      </details>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom"><p>&copy; 2025 ZION Blockchain</p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

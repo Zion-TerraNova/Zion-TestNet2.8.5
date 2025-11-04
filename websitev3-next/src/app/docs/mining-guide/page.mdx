@@ -1,0 +1,39 @@
+import MDXPageLayout from "@/components/MDXPageLayout";
+
+export default function Layout({ children }) {
+	return <MDXPageLayout>{children}</MDXPageLayout>;
+}
+
+# Mining Guide
+
+Choose your algorithm, connect to a pool or mine solo, and tune performance.
+
+## Algorithms
+
+- **RandomX** — CPU-friendly, good for general-purpose hardware.
+- **Autolykos v2** — GPU-friendly, efficient on modern GPUs.
+- **Cosmic Harmony** — Experimental; subject to change on testnet.
+
+## Miner Configuration
+
+Point your miner to a pool endpoint or run in solo mode against your local node.
+
+```bash
+./zion-miner --pool pool.zionterranova.com:3333 --algo randomx --wallet <YOUR_WALLET>
+```
+
+For solo: ensure your node exposes the required RPC and your miner supports it.
+
+### Pool vs Solo
+
+- **Pool mining**: more consistent payouts, lower variance.
+- **Solo mining**: higher variance; viable with significant hashrate.
+
+## Optimization Tips
+
+- Use the latest stable GPU/CPU drivers.
+- Pin miner processes to dedicated cores for RandomX.
+- Tune intensity/memory parameters for your hardware.
+- Monitor temps and power; avoid thermal throttling.
+
+> Legacy details: [/legacy/docs/mining-guide.html](/legacy/docs/mining-guide.html)

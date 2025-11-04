@@ -1,0 +1,34 @@
+import MDXPageLayout from "@/components/MDXPageLayout";
+
+export default function Layout({ children }) {
+  return <MDXPageLayout>{children}</MDXPageLayout>;
+}
+
+# Setup Guide
+
+Get your environment ready for ZION TestNet development and mining.
+
+## Prerequisites
+
+- Node.js 18+ and npm
+- Modern browser (Chrome/Brave/Firefox)
+- Optional: GPU drivers up to date (for mining)
+
+## Install the Wallet
+
+Download or build the ZION wallet. Ensure you back up your seed and keep it offline.
+
+## Configure the Node (optional)
+
+Run a local node to verify transactions and mine solo.
+
+```bash
+# Example
+zion-node --network testnet --datadir ~/.zion-testnet
+```
+
+## Next Steps
+
+- Read the [Mining Guide](/docs/mining-guide)
+- Explore the [API Reference](/docs/api-reference)
+- Check [TestNet Info](/docs/testnet-info)
