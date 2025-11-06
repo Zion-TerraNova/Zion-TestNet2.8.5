@@ -1,0 +1,80 @@
+import MDXPageLayout from "@/components/MDXPageLayout";
+
+export default function Layout({ children }) {
+  return <MDXPageLayout>{children}</MDXPageLayout>;
+}
+
+# Stránka 6: Governance & DAO
+
+- 2025–2045: postupná decentralizace, 3 vítězové (Golden Egg + XP leaders)
+- Transparentní treasury, grants, bounties, quarterly voting cycles
+
+Více detailů v plné verzi: /docs/whitepaper
+
+---
+
+## Cíle governance
+
+- Zajistit bezpečné a předvídatelné změny protokolu (ZIP lifecycle)
+- Vyvážit vliv mezi dlouhodobými držiteli, aktivními přispěvateli a komunitou
+- Plná transparentnost treasury a grantů (měsíční/kvartální reporty)
+- Nouzové postupy pro bezpečnostní incidenty s minimem centralizace
+
+## ZIP: ZION Improvement Proposals (Lifecycle)
+
+1. Draft – autor zveřejní návrh (motivace, specifikace, dopad)
+2. RFC – otevřená diskuse (2–4 týdny), připomínky editorů a stewardů
+3. Snapshot hlasování – off-chain signal podpory komunity
+4. On-chain hlasování – závazné pro parametry a rozpočty
+5. Security review – povinné u protokolových změn
+6. Implementace – verzovaná release procedura, migrační plán
+7. Retrospektiva – vyhodnocení, možnost rollbacku, lessons learned
+
+Role: autoři, editoři, security reviewers, release manager, community stewards.
+
+## Hlasování a váhy
+
+- Token-weighted (ZION) s měkkým kvadratickým tlumením velkých pozic
+- Reputation/XP pro volby do rolí (stevardi, grantová komise)
+- Quorum: 10–15 % u protokolu, 5–10 % u rozpočtů
+- Prahy: 50 % + 1 (běžné), 60–66 % (treasury), 66,7 % (core parametry)
+- Snapshot pro signalizaci, on-chain pro závazné změny
+
+## Treasury a rozpočty
+
+Zdroje: premine allokace, poplatky a tithe streamy, dary/partnerství.
+
+Zásady:
+- Čtvrtletní rozpočty (operace, grants, bezpečnost, výzkum)
+- Multisig s časovým zámkem a veřejnými adresami
+- Veřejné návrhy min. 14 dní před hlasováním
+- On-chain účetnictví + měsíční reporty
+
+## Role a pravomoci (rotující, odvolatelné)
+
+- Core Maintainers – releasy, reference implementace
+- Bridge Council – multi-chain integrace, parametry
+- Security Council – audity, bounty, incident response
+- Grants Committee – hodnocení grantů/bounties
+- Community Stewards – facilitace ZIP, moderace, komunikace
+
+## Nouzové postupy (Security/Emergency)
+
+- Dočasné pozastavení vybraných rozhraní při kritické CVE (max. 72 h)
+- Podepsané hotfix releasy, deterministické buildy, veřejné SHA256
+- Koordinované zveřejnění zranitelností, bounty, SLA
+- Preferováno fail-safe u bridge/escrow; dokumentovaný rollback
+
+## Transparentnost a audit
+
+- Měsíční treasury reporty; kvartální governance report
+- Externí audit klíčových releasů a bridge
+- Veřejná archivace ZIPů, hlasování, releasů, auditů
+
+## Milníky
+
+- 2025: ZIP framework, multisig treasury, Grants v1, Snapshot hlasování
+- 2026: On-chain hlasování pro parametry, Grants v2, volby stewardů/komisí
+- 2027: Rozšířená decentralizace – většina klíčových pravomocí přes DAO
+
+Další kapitoly: [Security & Compliance](/docs/whitepaper/security) · [Roadmap & Deployment](/docs/whitepaper/roadmap)

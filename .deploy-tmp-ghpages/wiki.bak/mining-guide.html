@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZION TestNet Mining Guide: algorithms, configuration, pools, optimization." />
+  <title>Mining Guide · ZION TestNet Wiki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="../" class="logo">
+            <img src="../assets/icons/zion.gif" alt="ZION Logo" width="40" height="40">
+          </a>
+        <div class="brand-text">
+          <a href="../" class="brand-name">ZION</a>
+          <span class="brand-version">TestNet 2.8.5 · Wiki</span>
+        </div>
+      </div>
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Wiki Home</a></li>
+        <li><a href="getting-started.html">Getting Started</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="../docs/">Docs</a></li>
+        <li><a href="../dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top:2rem;padding-bottom:2rem;">
+    <div class="section-header">
+      <h1>Mining Guide</h1>
+      <p>Choose your algorithm, connect to a pool or mine solo, and tune performance.</p>
+    </div>
+
+    <section class="content">
+      <h2 id="algorithms">Algorithms</h2>
+      <ul>
+        <li><strong>RandomX</strong> — CPU-friendly, good for general-purpose hardware.</li>
+        <li><strong>Autolykos v2</strong> — GPU-friendly, efficient on modern GPUs.</li>
+        <li><strong>Cosmic Harmony</strong> — Experimental; subject to change on testnet.</li>
+      </ul>
+
+      <h2 id="configure">Miner Configuration</h2>
+      <p>Point your miner to a pool endpoint or run in solo mode against your local node.</p>
+      <div class="code-block"><code>./zion-miner --pool pool.zionterranova.com:3333 --algo randomx --wallet &lt;YOUR_WALLET&gt;</code></div>
+      <p>For solo: ensure your node exposes the required RPC and your miner supports it.</p>
+
+      <h3 id="pools">Pool vs Solo</h3>
+      <ul>
+        <li><strong>Pool mining</strong>: more consistent payouts, lower variance.</li>
+        <li><strong>Solo mining</strong>: higher variance; viable with significant hashrate.</li>
+      </ul>
+
+      <h2 id="optimization">Optimization Tips</h2>
+      <ul>
+        <li>Use the latest stable GPU/CPU drivers.</li>
+        <li>Pin miner processes to dedicated cores for RandomX.</li>
+        <li>Tune intensity/memory parameters for your hardware.</li>
+        <li>Monitor temps and power; avoid thermal throttling.</li>
+      </ul>
+
+      <div class="note">Details may change during testnet. Check the <a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5/releases" target="_blank">release notes</a> for updates.</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom"><p>&copy; 2025 ZION Blockchain</p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -24,6 +24,12 @@ else
   git checkout --orphan gh-pages
 fi
 
+# Ensure we're up to date with remote gh-pages to avoid non-fast-forward
+git fetch origin gh-pages || true
+if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
+  git reset --hard origin/gh-pages || true
+fi
+
 # Clean working tree except .git
 find . -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
 
@@ -46,7 +52,8 @@ if git diff --cached --quiet; then
   echo "No changes to publish."
 else
   git commit -m "Publish WebsiteV2 to GitHub Pages (gh-pages)"
-  git push -u origin gh-pages
+  # Force-with-lease to handle history rewrites safely
+  git push --force-with-lease -u origin gh-pages
   echo "Published to gh-pages."
 fi
 

@@ -27,15 +27,11 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <div class="logo">
-                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50 10L90 35V65L50 90L10 65V35L50 10Z" stroke="currentColor" stroke-width="4" fill="none"/>
-                        <circle cx="50" cy="50" r="15" fill="currentColor" opacity="0.3"/>
-                        <path d="M50 25V75M25 50H75" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                </div>
+                <a href="/" class="logo">
+                    <img src="assets/icons/zion.gif" alt="ZION Logo" width="40" height="40">
+                </a>
                 <div class="brand-text">
-                    <span class="brand-name">ZION</span>
+                    <a href="/" class="brand-name">ZION</a>
                     <span class="brand-version">TestNet 2.8.5</span>
                 </div>
             </div>
@@ -46,12 +42,39 @@
                 <span></span>
             </button>
             
-            <ul class="nav-menu">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#quickstart">Quick Start</a></li>
-                <li><a href="wiki/">Wiki</a></li>
-                <li><a href="docs/">Docs</a></li>
-                <li><a href="#stats" class="nav-highlight">Live Stats</a></li>
+                        <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle" aria-expanded="false">Docs <span class="chevron"></span></button>
+                    <div class="dropdown-menu">
+                        <a href="docs/index.html">Overview</a>
+                        <a href="docs/getting-started.html">Getting Started</a>
+                        <a href="docs/setup.html">Setup Guide</a>
+                        <a href="docs/mining-guide.html">Mining Guide</a>
+                        <a href="docs/consciousness-levels.html">Consciousness Levels</a>
+                        <a href="docs/api-reference.html">API Reference</a>
+                        <a href="docs/faq.html">FAQ</a>
+                        <a href="whitepaper.html" class="nav-highlight">Whitepaper (Full)</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle" aria-expanded="false">Network <span class="chevron"></span></button>
+                    <div class="dropdown-menu">
+                        <a href="docs/testnet-info.html">TestNet Info</a>
+                        <a href="docs/pool-setup.html">Pool Setup</a>
+                        <a href="docs/technical-specs.html">Technical Specs</a>
+                        <a href="docs/version-history.html">Version History</a>
+                        <a href="docs/roadmap.html">Roadmap</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle" aria-expanded="false">OASIS <span class="chevron"></span></button>
+                    <div class="dropdown-menu">
+                        <a href="docs/oasis.html">Overview</a>
+                        <a href="oasis.html" class="nav-highlight">Full Documentation</a>
+                    </div>
+                </li>
+                <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5" target="_blank" class="nav-btn">GitHub</a></li>
             </ul>
         </div>
@@ -366,6 +389,7 @@
                     <h4>Network</h4>
                     <ul>
                         <li><a href="#stats">Live Stats</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
                         <li><a href="docs/testnet-info.html">TestNet Info</a></li>
                         <li><a href="wiki/mining-guide.html">Mining Guide</a></li>
                         <li><a href="docs/pool-setup.html">Pool Setup</a></li>

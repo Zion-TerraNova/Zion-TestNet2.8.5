@@ -1,0 +1,154 @@
+import MDXPageLayout from "@/components/MDXPageLayout";
+
+export default function Layout({ children }) {
+  return <MDXPageLayout>{children}</MDXPageLayout>;
+}
+
+# API Reference
+
+Blockchain RPC, Sacred Library API, and WebSocket endpoints for ZION TestNet.
+
+## Blockchain RPC Endpoints
+
+Default endpoint (local node): `http://127.0.0.1:8545`
+
+### Get Block Number
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "zion_blockNumber",
+  "params": [],
+  "id": 1
+}
+```
+
+### Get Block by Number
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "zion_getBlockByNumber",
+  "params": ["latest", true],
+  "id": 2
+}
+```
+
+### Get Balance
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "zion_getBalance",
+  "params": ["0xYourWalletAddress", "latest"],
+  "id": 3
+}
+```
+
+### Send Transaction
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "zion_sendTransaction",
+  "params": [{
+    "from": "0xSenderAddress",
+    "to": "0xReceiverAddress",
+    "value": "0x1000000000000000",
+    "gas": "0x5208"
+  }],
+  "id": 4
+}
+```
+
+## Sacred Library API
+
+Access 6 ancient wisdom texts (39,036 lines total) via JSON-RPC. All texts stored on IPFS with blockchain references.
+
+### Available Texts
+
+- **cosmic_egg** — 587 lines
+- **emerald_tablets** — 6,011 lines
+- **dohrman_prophecy** — 11,856 lines
+- **omnity_one_love** — 1,445 lines
+- **ancient_cipher** — 13,243 lines
+- **secrets_of_amenti** — 5,899 lines
+
+### Get Text Excerpt
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "sacred_library_get_text",
+  "params": {
+    "text": "emerald_tablets",
+    "tablet": 1,
+    "lines": [1, 50]
+  },
+  "id": 5
+}
+```
+
+### Sample Response
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "text": "emerald_tablets",
+    "section": "Tablet I",
+    "content": "I, THOTH, the Atlantean, master of mysteries...",
+    "ipfs_hash": "Qm...",
+    "checksum": "sha256:abc123..."
+  },
+  "id": 5
+}
+```
+
+### Search Library
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "sacred_library_search",
+  "params": {
+    "query": "consciousness",
+    "texts": ["all"],
+    "limit": 10
+  },
+  "id": 6
+}
+```
+
+### Daily Wisdom
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "sacred_library_daily_wisdom",
+  "params": {},
+  "id": 7
+}
+```
+
+> Sacred Library API is part of ZION OASIS integration.
+
+## WebSocket API
+
+Subscribe to new blocks and events over WebSocket.
+
+```
+ws://127.0.0.1:8546
+```
+
+Protocol details are evolving on testnet. Watch the repository for updates.
+
+## Error Codes
+
+- **-32601** — Method not found
+- **-32602** — Invalid params
+- **-32603** — Internal error
+- **-32700** — Parse error
+- **-32600** — Invalid request
+
+> API is subject to change during testnet. Check the [release notes](https://github.com/Zion-TerraNova/Zion-TestNet2.8.5/releases) for updates.

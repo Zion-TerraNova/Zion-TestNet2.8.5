@@ -1,0 +1,82 @@
+import MDXPageLayout from "@/components/MDXPageLayout";
+
+export default function Layout({ children }) {
+  return <MDXPageLayout>{children}</MDXPageLayout>;
+}
+
+# Setup Guide
+
+System requirements, installation, node configuration, and wallet setup for ZION TestNet.
+
+## System Requirements
+
+- **CPU:** 2+ cores (4+ recommended for RandomX mining)
+- **RAM:** 8 GB (16 GB recommended)
+- **Storage:** 20 GB free (SSD recommended)
+- **Network:** Stable broadband connection
+- **OS:** Windows, Linux, or macOS
+
+## Installation
+
+### Windows
+
+1. Download the latest TestNet release (ZIP) from [GitHub Releases](https://github.com/Zion-TerraNova/Zion-TestNet2.8.5/releases).
+2. Extract and open a terminal in the folder.
+3. Run:
+
+   ```powershell
+   zion-node.exe --testnet --rpc-port 8545
+   ```
+
+### Linux
+
+1. Download tarball from Releases.
+2. Extract and mark binaries executable:
+
+   ```bash
+   chmod +x zion-node zion-miner
+   ```
+
+3. Run:
+
+   ```bash
+   ./zion-node --testnet --rpc-port 8545
+   ```
+
+### macOS
+
+1. Download tarball from Releases.
+2. If blocked by Gatekeeper, allow in System Settings → Privacy & Security.
+3. Run:
+
+   ```bash
+   ./zion-node --testnet --rpc-port 8545
+   ```
+
+## Node Configuration
+
+Create a config file (optional) or pass flags via CLI. Example minimal config:
+
+```json
+{
+  "network": "testnet",
+  "rpc": {
+    "enabled": true,
+    "port": 8545
+  }
+}
+```
+
+## Wallet Setup
+
+1. Create a new wallet and securely store the seed phrase.
+2. Connect your miner to the wallet address.
+3. Test sending a small transaction on testnet.
+
+## Next Steps
+
+- Read the [Mining Guide](/docs/mining-guide).
+- Explore the [API Reference](/docs/api-reference).
+- View [Live Stats](/dashboard) on the dashboard.
+
+> For detailed mining configuration, see [Mining Guide](/docs/mining-guide). For pool setup, see [Pool Setup](/docs/pool-setup).

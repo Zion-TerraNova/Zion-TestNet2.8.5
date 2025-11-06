@@ -1,0 +1,114 @@
+import MDXPageLayout from "@/components/MDXPageLayout";
+
+export default function Layout({ children }) {
+  return <MDXPageLayout>{children}</MDXPageLayout>;
+}
+
+# Stránka 7: Security & Compliance
+
+---
+
+## 🔐 Cryptographic Foundations
+
+- Ed25519 signatures, Keccak/Blake2 hashing, AES-256 encryption
+- CryptoNote privacy: Ring Signatures, Stealth Addresses, RingCT
+- Configurable ring size (default 11; paranoid modes up to 101)
+
+```text
+Transaction Privacy
+────────────────────────────────
+• Inputs anonymized via ring signatures
+• Outputs hidden via stealth addresses
+• Amounts hidden via RingCT commitments
+```
+
+---
+
+## 🧱 Binary-Only Distribution & Integrity
+
+- Production builds ship as signed binaries only (no py sources)
+- Release artifacts include SHA256 checksums and signature files
+- Docker images: Ubuntu 24.04 minimal, non-root runtime, pinned deps
+
+```bash
+# Verify release
+sha256sum -c checksums.txt  # All files: OK
+gpg --verify zion-2.8.5.tar.gz.asc zion-2.8.5.tar.gz
+```
+
+Supply chain controls:
+- Pinned version locks, reproducible builds (WIP)
+- Multi-stage Docker to minimize attack surface
+- SBOM generation and image scanning in CI
+
+---
+
+## 🛡️ Node & Network Hardening
+
+- DoS/Spam: mempool limits, fee-per-byte policy, peer score bans
+- P2P: limited inbound peers, geo diversity, checkpointed headers
+- API: rate limiting, auth on admin endpoints, CORS rules
+- Keys: hardware-backed signing preferred, key rotation procedures
+
+```yaml
+Mempool Limits:
+  max_size_mb: 100
+  max_tx_kb: 100
+  fee_per_byte_min: 10  # atomic units
+Peers:
+  inbound_max: 64
+  ban_score: 100
+  ban_time: 24h
+```
+
+---
+
+## 🔍 Audits, Testing, Monitoring
+
+- Third‑party security audit: planned Q2 2026 (code + infra + bridge)
+- Penetration testing before MainNet (Q3 2026)
+- Continuous fuzzing for tx parsing and P2P protocol
+- Monitoring: Prometheus/Grafana dashboards, alerting on anomalies
+
+```text
+Audit Scope
+• Consensus & Difficulty Adjustment
+• Wallet cryptography (key images, RingCT)
+• RPC shim & Stratum pool integration
+• Bridge validators and multisig rules
+• Docker & CI supply chain
+```
+
+---
+
+## 👛 Wallet Security
+
+- Recommended: hardware-backed secrets (TPM/YubiKey)
+- Encrypted keystores with strong passphrases
+- View-only wallets for audit/reporting contexts
+- Recovery with seed phrases; offline backups strategy
+
+---
+
+## ⚖️ Compliance Position
+
+- Privacy by default; user sovereignty first
+- No KYC in protocol; optional integrations for partners off-chain
+- Humanitarian tithe accounted transparently (quarterly reports)
+- Jurisdiction-aware: binary distribution and documentation only
+
+---
+
+## 📜 Incident Response & Emergency Procedures
+
+- 72h emergency veto window (Core stewards) for critical exploits
+- Public disclosure policy with staged details and hotfix timelines
+- Postmortems required; follow-up ZIPs for protocol changes
+
+---
+
+**Pokračování:** [Stránka 8: Roadmap & Deployment →](/docs/whitepaper/roadmap)
+
+---
+
+*Stránka 7 z 12 | ZION Multi-Chain Dharma Ecosystem Whitepaper v1.0*

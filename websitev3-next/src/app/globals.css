@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+:root {
+  /* Base theme tokens */
+  --background: #070912;
+  --foreground: #e6e6e6;
+
+  /* Matrix + Cyberpunk palette */
+  --matrix-green: #00ff41;
+  --cyber-cyan: #00eaff;
+  --cyber-magenta: #ff2dfb;
+  --nebula-purple: #6a00ff;
+
+  --glow-green: 0 0 18px rgba(0, 255, 65, 0.35);
+  --glow-cyan: 0 0 18px rgba(0, 234, 255, 0.28);
+  --glow-magenta: 0 0 18px rgba(255, 45, 251, 0.28);
+}
+
+:root {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-brand: var(--font-orbitron);
+  --font-tech: var(--font-sharemono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #05060a;
+    --foreground: #ededed;
+  }
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(106, 0, 255, 0.16), transparent 40%),
+    radial-gradient(900px 500px at 80% 20%, rgba(0, 234, 255, 0.12), transparent 45%),
+    radial-gradient(1000px 800px at 50% 110%, rgba(0, 255, 65, 0.08), transparent 50%),
+    linear-gradient(180deg, #070912 0%, #0a0f1e 60%, #05060a 100%);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Smooth anchor scrolling and fixed-header offset for docs headings */
+html {
+  scroll-behavior: smooth;
+}
+
+.prose :where(h1, h2, h3, h4, h5, h6) {
+  /* Offset headings when navigated via #anchors so they don’t hide under the fixed navbar */
+  scroll-margin-top: 96px;
+}
+
+.gradient-matrix {
+  background-image: linear-gradient(120deg, var(--matrix-green), var(--cyber-cyan) 45%, var(--cyber-magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.neon {
+  text-shadow: var(--glow-green), var(--glow-cyan);
+}
+
+/* MDX Prose Styles */
+.prose {
+  color: var(--foreground);
+  max-width: none;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: var(--cyber-cyan);
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.prose h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.prose code {
+  background-color: rgba(0, 255, 65, 0.1);
+  color: var(--matrix-green);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.prose pre {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background-color: transparent;
+  color: var(--foreground);
+  padding: 0;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--matrix-green);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: rgba(230, 230, 230, 0.8);
+  font-style: italic;
+}
+
+.prose ul, .prose ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose a {
+  color: var(--cyber-cyan);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.prose a:hover {
+  color: var(--matrix-green);
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.prose th, .prose td {
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+
+.prose th {
+  background-color: rgba(0, 255, 65, 0.1);
+  color: var(--cyber-cyan);
+  font-weight: 600;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid rgba(0, 255, 65, 0.3);
+  margin: 2rem 0;
+}

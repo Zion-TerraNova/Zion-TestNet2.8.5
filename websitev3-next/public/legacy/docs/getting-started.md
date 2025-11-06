@@ -1,0 +1,90 @@
+# Getting Started with ZION TestNet
+
+Welcome to ZION TestNet 2.8.5! This guide will help you get started with mining ZION tokens.
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+- A computer with at least 4GB RAM
+- Internet connection
+- Basic command line knowledge
+
+## Quick Start
+
+### 1. Download the Miner
+
+```bash
+# Download the latest miner
+wget https://github.com/estrelaisabellazion3/Zion-TestNet-2.7.5-master/releases/download/v2.8.5/zion_miner_v2.8.5.zip
+```
+
+### 2. Extract and Configure
+
+```bash
+# Extract the archive
+unzip zion_miner_v2.8.5.zip
+cd zion_miner_v2.8.5
+
+# Edit configuration
+nano config.json
+```
+
+### 3. Start Mining
+
+```bash
+# Start the miner
+./zion_miner --config config.json
+```
+
+## Configuration Options
+
+### Basic Settings
+
+- `wallet_address`: Your ZION wallet address
+- `pool_url`: Mining pool URL
+- `threads`: Number of CPU threads to use
+
+### Advanced Settings
+
+- `algorithm`: Mining algorithm (default: "zion-hash")
+- `difficulty`: Mining difficulty adjustment
+- `timeout`: Connection timeout in seconds
+
+## Troubleshooting
+
+### Common Issues
+
+#### Connection Failed
+
+If you see connection errors:
+
+1. Check your internet connection
+2. Verify the pool URL is correct
+3. Ensure firewall allows outbound connections
+
+#### Low Hashrate
+
+To improve performance:
+
+1. Increase thread count
+2. Close other CPU-intensive applications
+3. Update your mining software
+
+## Next Steps
+
+Once you're mining successfully:
+
+1. Monitor your hashrate and earnings
+2. Join the community Discord
+3. Consider setting up a dedicated mining rig
+
+## Support
+
+Need help? Check out:
+
+- [FAQ](/docs/faq)
+- [Mining Guide](/docs/mining-guide)
+- [Discord Community](https://discord.gg/zion)
+
+Happy mining! ⛏️

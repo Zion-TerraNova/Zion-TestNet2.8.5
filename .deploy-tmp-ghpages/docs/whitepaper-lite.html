@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZION Whitepaper Lite – overview of economics, consensus, mining, governance, and roadmap." />
+  <title>Whitepaper Lite · ZION TestNet Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/icons/zion.gif" type="image/gif">
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="../" class="logo">
+          <img src="../assets/icons/zion.gif" alt="ZION Logo" width="40" height="40">
+        </a>
+        <div class="brand-text">
+          <a href="../" class="brand-name">ZION</a>
+          <span class="brand-version">TestNet 2.8.5</span>
+        </div>
+      </div>
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">Docs <span class="chevron"></span></button>
+          <div class="dropdown-menu">
+            <a href="index.html">Overview</a>
+            <a href="getting-started.html">Getting Started</a>
+            <a href="setup.html">Setup Guide</a>
+            <a href="mining-guide.html">Mining Guide</a>
+            <a href="consciousness-levels.html">Consciousness Levels</a>
+            <a href="api-reference.html">API Reference</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">Network <span class="chevron"></span></button>
+          <div class="dropdown-menu">
+            <a href="testnet-info.html">TestNet Info</a>
+            <a href="pool-setup.html">Pool Setup</a>
+            <a href="technical-specs.html">Technical Specs</a>
+            <a href="version-history.html">Version History</a>
+            <a href="roadmap.html">Roadmap</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">OASIS <span class="chevron"></span></button>
+          <div class="dropdown-menu">
+            <a href="oasis.html">Overview</a>
+          </div>
+        </li>
+        <li><a href="../dashboard.html">Dashboard</a></li>
+        <li><a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5" target="_blank" class="nav-btn">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="docs-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="docs-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Getting Started</div>
+        <ul class="sidebar-nav">
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="setup.html">Setup Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Core Documentation</div>
+        <ul class="sidebar-nav">
+          <li><a href="whitepaper-lite.html" class="active">Whitepaper Lite</a>
+            <ul class="sidebar-sub">
+              <li><a href="#abstract">Abstract</a></li>
+              <li><a href="#tokenomics">Tokenomics</a></li>
+              <li><a href="#consensus">Consensus</a></li>
+              <li><a href="#consciousness">Consciousness Mining</a></li>
+              <li><a href="#governance">Governance</a></li>
+              <li><a href="#parameters">Parameters</a></li>
+              <li><a href="#roadmap">Roadmap</a></li>
+            </ul>
+          </li>
+          <li><a href="oasis.html">ZION OASIS</a></li>
+          <li><a href="cosmic-map.html">Cosmic Map</a></li>
+          <li><a href="whitepaper-lite-cz.html">Whitepaper Lite (CZ)</a></li>
+          <li><a href="testnet-info.html">TestNet Info</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Mining</div>
+        <ul class="sidebar-nav">
+          <li><a href="mining-guide.html">Mining Guide</a></li>
+          <li><a href="consciousness-levels.html">Consciousness Levels</a></li>
+          <li><a href="pool-setup.html">Pool Setup</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Reference</div>
+        <ul class="sidebar-nav">
+          <li><a href="api-reference.html">API Reference</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="docs-content">
+      <h1>Whitepaper Lite 2.8.5</h1>
+      <p class="hero-description" style="font-size:1.125rem;color:var(--text-secondary);margin-bottom:1rem;">Concise overview of ZION's model aligned with the 2.8.5 "Milky Way" release.</p>
+      <div class="hero-actions" style="margin-bottom:1.75rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+        <a href="whitepaper/ZION_Whitepaper_v2.8.5.md" download class="btn" style="display:inline-block;padding:0.6rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;">Download Full Whitepaper (MD)</a>
+        <a href="../whitepaper.html" class="btn" style="display:inline-block;padding:0.55rem 1rem;border-radius:8px;border:1px solid var(--border);text-decoration:none;">Open online</a>
+      </div>
+
+      <h2 id="abstract">Abstract</h2>
+      <p>ZION is a consciousness-based blockchain designed to align material value with humanitarian impact and spiritual development. The TestNet explores a mining model with multipliers, long-horizon governance transition, and a transparent allocation for social good.</p>
+
+      <h2 id="tokenomics">Tokenomics (v2.8.5 alignment)</h2>
+      <ul>
+        <li><strong>Total Supply</strong>: 144,000,000,000 ZION.</li>
+        <li><strong>Premine</strong>: 15,780,000,000 ZION (11%):
+          <ul>
+            <li>Mining Operators: 8.25B (2025–2035 consciousness rewards)</li>
+            <li>DAO Winners &amp; Golden Egg: 1.75B</li>
+            <li>ZION OASIS Fund: 1.44B (AAA dev/marketing)</li>
+            <li>Infrastructure: 4.34B (dev, servers, charity)</li>
+          </ul>
+        </li>
+        <li><strong>Mining</strong>: 128,220,000,000 ZION (89%) via multi‑algo over ~45 years.</li>
+        <li><strong>Humanitarian</strong>: 10–25% pool redistribution on mainnet (no extra issuance).</li>
+      </ul>
+      <div class="note">This replaces earlier illustrative TestNet splits. See the Full Whitepaper for rationale and schedules.</div>
+
+      <h2 id="consensus">Consensus & Mining</h2>
+      <ul>
+        <li><strong>Multi‑Algorithm Mining</strong>: cosmic_harmony, randomx, yescrypt, autolykos_v2, and quantum_entanglement (research).</li>
+        <li><strong>Block Time</strong>: 150 seconds (~2.5 minutes).</li>
+        <li><strong>Consensus</strong>: WARP Engine + Proof‑of‑Work.</li>
+        <li><strong>ASIC‑Resistance Goals</strong>: Encourage decentralization and broad participation.</li>
+        <li><strong>Security</strong>: Standard cryptography with community‑driven audits and iterative hardening.</li>
+      </ul>
+
+      <h2 id="consciousness">Consciousness Mining (Concept)</h2>
+      <p>Participants receive reward multipliers based on development levels. The TestNet evaluates fair and ethical mechanisms aligned with the Full Whitepaper.</p>
+      <ul>
+        <li><strong>Levels (1→9)</strong>: Physical → Emotional → Intellectual → Intuitive → Mental → Spiritual → Cosmic → Galactic → On The Star</li>
+        <li><strong>Multipliers</strong>: up to ~7.5× (current v2.8.5 alignment)</li>
+        <li><strong>Intent</strong>: Align incentives with community ethics and humanitarian outcomes</li>
+      </ul>
+
+      <h2 id="governance">Governance & Treasury</h2>
+      <ul>
+        <li><strong>20-year transition</strong> toward full DAO governance.</li>
+        <li><strong>Treasury transparency</strong> with public reporting and community oversight.</li>
+        <li><strong>Proposal process</strong> to prioritize projects (education, healthcare, welfare).</li>
+      </ul>
+
+      <h2 id="parameters">Key Parameters (v2.8.5)</h2>
+      <ul>
+        <li>Block time: 150 seconds (~2.5 minutes)</li>
+        <li>Consensus: WARP Engine + Proof‑of‑Work</li>
+        <li>Algorithms: cosmic_harmony, randomx, yescrypt, autolykos_v2, quantum_entanglement</li>
+        <li>Total supply: 144B ZION</li>
+        <li>Golden Egg Quest (HIRANYAGARBHA): special challenge with significant rewards</li>
+      </ul>
+
+      <h2 id="roadmap">Roadmap & Risks</h2>
+      <ul>
+        <li><strong>Q4 2025</strong> — TestNet 2.8.5: pool, Sacred Library RPC, docs</li>
+        <li><strong>2026</strong> — Multi‑chain bridges, mobile wallets, audits</li>
+        <li><strong>Q1 2027</strong> — Mainnet v3.0 (DAO activation)</li>
+        <li><strong>Q2 2028</strong> — OASIS public launch + Golden Egg hunt</li>
+        <li><strong>2030</strong> — 144,000 Grid activation (planetary shift)</li>
+        <li><strong>Risks</strong>: mechanism manipulation, governance capture, regulatory changes</li>
+      </ul>
+
+      <div class="note">This Lite version is aligned with “ZION 2.8.5 Milky Way”. Read the <a href="../whitepaper.html">Full Whitepaper</a> for formal specs and proofs.</div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom"><p>&copy; 2025 ZION Blockchain</p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+  <script>
+    // Highlight active TOC items on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.docs-content h2[id], .docs-content h3[id]');
+      const sidebarLinks = document.querySelectorAll('.sidebar-sub a');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            sidebarLinks.forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+          }
+        });
+      }, { rootMargin: '-100px 0px -80% 0px' });
+      
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
+</body>
+</html>

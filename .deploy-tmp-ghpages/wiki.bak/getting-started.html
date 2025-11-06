@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Getting Started with ZION TestNet 2.8.5" />
+  <title>Getting Started · ZION TestNet Wiki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="../" class="logo">
+            <img src="../assets/icons/zion.gif" alt="ZION Logo" width="40" height="40">
+          </a>
+        <div class="brand-text">
+          <a href="../" class="brand-name">ZION</a>
+          <span class="brand-version">TestNet 2.8.5 · Wiki</span>
+        </div>
+      </div>
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Wiki Home</a></li>
+        <li><a href="mining-guide.html">Mining</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="../docs/">Docs</a></li>
+        <li><a href="../dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top:2rem;padding-bottom:2rem;">
+    <div class="section-header">
+      <h1>Getting Started</h1>
+      <p>Your first steps on the ZION TestNet.</p>
+    </div>
+
+    <section class="content">
+      <h2 id="what-is-zion">What is ZION?</h2>
+      <p>ZION is the first consciousness-based blockchain. It combines conventional cryptography with a humanitarian mission and a novel mining model that multiplies rewards based on spiritual development levels.</p>
+
+      <h3 id="consciousness-mining">Consciousness Mining</h3>
+      <p>Miners can receive multipliers (1x–15x) according to 9 levels from Physical to ON_THE_STAR. While the mechanism is in active research on the testnet, the intent is to encourage ethical, community-oriented contribution.</p>
+
+      <h2 id="first-steps">First Steps</h2>
+      <ol class="numbered">
+        <li>
+          <strong>Download TestNet Client</strong><br/>
+          Get the latest binaries from <a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5/releases" target="_blank">Releases</a>.
+        </li>
+        <li>
+          <strong>Run a Node</strong>
+          <div class="code-block"><code>./zion-node --testnet --rpc-port 8545</code></div>
+        </li>
+        <li>
+          <strong>Set Up a Wallet</strong><br/>
+          Create/backup your keys; then connect your miner or interact via RPC. See <a href="../docs/setup.html">Docs → Setup</a>.
+        </li>
+      </ol>
+
+      <h2 id="next">What’s Next?</h2>
+      <ul>
+        <li>Read the <a href="mining-guide.html">Mining Guide</a> and choose an algorithm.</li>
+        <li>Check <a href="../index.html#stats">Live Stats</a> on the homepage.</li>
+        <li>Explore API in <a href="../docs/api-reference.html">Docs → API Reference</a>.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom"><p>&copy; 2025 ZION Blockchain</p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+  
+</body>
+</html>
