@@ -9,3 +9,5 @@ websiteV2/
 node_modules/
 dist/
 build/
+# Hide Next.js v3 workspace from Git history going forward
+websitev3-next/
