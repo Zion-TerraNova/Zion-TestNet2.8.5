@@ -1,0 +1,113 @@
+@import "tailwindcss";
+:root {
+  --background: #020617;
+  --foreground: #f8fafc;
+}
+
+/* Theme variables */
+html[data-theme="dark"] {
+  --background: #020617;
+  --foreground: #f8fafc;
+}
+
+html[data-theme="light"] {
+  --background: #f8fafc;
+  --foreground: #0b1220;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans);
+}
+
+/* Matrix gradients applied only in dark for subtle flair */
+html[data-theme="dark"] body {
+  background: radial-gradient(circle at top, rgba(0, 255, 65, 0.08), transparent 55%),
+    radial-gradient(circle at bottom, rgba(13, 240, 255, 0.06), transparent 60%),
+    var(--background);
+}
+
+html[data-theme="light"] body {
+  background: radial-gradient(circle at top, rgba(0, 120, 40, 0.05), transparent 55%),
+    radial-gradient(circle at bottom, rgba(0, 140, 160, 0.04), transparent 60%),
+    var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0df0ff;
+}
+
+::selection {
+  background: rgba(0, 255, 65, 0.35);
+  color: #01260b;
+}
+
+.gradient-matrix {
+  background: linear-gradient(120deg, rgba(0, 255, 65, 0.95), rgba(13, 240, 255, 0.85));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-matrix.neon {
+  text-shadow: 0 0 30px rgba(0, 255, 65, 0.45), 0 0 60px rgba(13, 240, 255, 0.3);
+}
+
+.hero-tagline {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.matrix-sheen::before {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(130deg, rgba(0, 255, 65, 0.45), rgba(13, 240, 255, 0.35));
+  opacity: 0.35;
+  filter: blur(20px);
+  content: "";
+  z-index: -1;
+}
+
+.matrix-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 65, 0.4) rgba(2, 6, 23, 0.3);
+}
+
+.matrix-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.matrix-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(0, 255, 65, 0.65), rgba(13, 240, 255, 0.55));
+  border-radius: 9999px;
+}
+
+.matrix-scrollbar::-webkit-scrollbar-track {
+  background: rgba(2, 6, 23, 0.65);
+}
+
+canvas {
+  pointer-events: none;
+}
+
+/* Code blocks and inline code are styled in MarkdownRenderer; keep minimal base here */
+.prose pre { background: transparent; border: 0; padding: 0; }
+.prose code { background: transparent; padding: 0; }
+
+.prose :where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-orbitron);
+  letter-spacing: 0.04em;
+  scroll-margin-top: 120px;
+}

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZION TestNet API Reference: RPC endpoints, Sacred Library API, WebSocket, and error codes." />
+  <title>API Reference · ZION TestNet Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/icons/zion.gif" type="image/gif">
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .code-header { display:flex; justify-content: space-between; font-size:0.85rem; color: var(--text-muted); margin-bottom: .25rem; }
+    .code-title { opacity: .9; }
+    .code-lang { font-family: var(--font-mono); }
+  </style>
+  </head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="../" class="logo">
+          <img src="../assets/icons/zion.gif" alt="ZION Logo" width="40" height="40">
+        </a>
+        <div class="brand-text">
+          <a href="../" class="brand-name">ZION</a>
+          <span class="brand-version">TestNet 2.8.5</span>
+        </div>
+      </div>
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">Docs <span class="chevron"></span></button>
+          <div class="dropdown-menu">
+            <a href="index.html">Overview</a>
+            <a href="getting-started.html">Getting Started</a>
+            <a href="setup.html">Setup Guide</a>
+            <a href="mining-guide.html">Mining Guide</a>
+            <a href="consciousness-levels.html">Consciousness Levels</a>
+            <a href="api-reference.html">API Reference</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">Network <span class="chevron"></span></button>
+          <div class="dropdown-menu">
+            <a href="testnet-info.html">TestNet Info</a>
+            <a href="pool-setup.html">Pool Setup</a>
+            <a href="technical-specs.html">Technical Specs</a>
+            <a href="version-history.html">Version History</a>
+            <a href="roadmap.html">Roadmap</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">OASIS <span class="chevron"></span></button>
+          <div class="dropdown-menu">
+            <a href="oasis.html">Overview</a>
+          </div>
+        </li>
+        <li><a href="../dashboard.html">Dashboard</a></li>
+        <li><a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5" target="_blank" class="nav-btn">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="docs-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="docs-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Getting Started</div>
+        <ul class="sidebar-nav">
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="setup.html">Setup Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Core Documentation</div>
+        <ul class="sidebar-nav">
+          <li><a href="whitepaper-lite.html">Whitepaper Lite</a></li>
+          <li><a href="whitepaper-lite-cz.html">Whitepaper Lite (CZ)</a></li>
+          <li><a href="cosmic-map.html">Cosmic Map</a></li>
+          <li><a href="oasis.html">ZION OASIS</a></li>
+          <li><a href="testnet-info.html">TestNet Info</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Mining</div>
+        <ul class="sidebar-nav">
+          <li><a href="mining-guide.html">Mining Guide</a></li>
+          <li><a href="consciousness-levels.html">Consciousness Levels</a></li>
+          <li><a href="pool-setup.html">Pool Setup</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Reference</div>
+        <ul class="sidebar-nav">
+          <li><a href="api-reference.html" class="active">API Reference</a>
+            <ul class="sidebar-sub">
+              <li><a href="#blockchain-rpc">Blockchain RPC</a></li>
+              <li><a href="#sacred-library">Sacred Library API</a></li>
+              <li><a href="#ws">WebSocket API</a></li>
+              <li><a href="#errors">Error Codes</a></li>
+            </ul>
+          </li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="docs-content">
+      <h1>API Reference</h1>
+      <p class="hero-description" style="font-size:1.125rem;color:var(--text-secondary);margin-bottom:2rem;">Blockchain RPC, Sacred Library API, and WebSocket endpoints for ZION TestNet.</p>
+
+      <h2 id="blockchain-rpc">Blockchain RPC Endpoints</h2>
+      <p>Default endpoint (local node): <code>http://127.0.0.1:8545</code></p>
+
+      <h3>Get Block Number</h3>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">json</span><span class="code-title">Request</span></div>
+        <pre><code>{
+  "jsonrpc": "2.0",
+  "method": "zion_blockNumber",
+  "params": [],
+  "id": 1
+}</code></pre>
+      </div>
+
+      <h3>Get Block by Number</h3>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">json</span><span class="code-title">Request</span></div>
+        <pre><code>{
+  "jsonrpc": "2.0",
+  "method": "zion_getBlockByNumber",
+  "params": ["latest", true],
+  "id": 2
+}</code></pre>
+      </div>
+
+      <h3>Get Balance</h3>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">json</span><span class="code-title">Request</span></div>
+        <pre><code>{
+  "jsonrpc": "2.0",
+  "method": "zion_getBalance",
+  "params": ["0xYourWalletAddress", "latest"],
+  "id": 3
+}</code></pre>
+      </div>
+
+      <h3>Send Transaction</h3>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">json</span><span class="code-title">Request</span></div>
+        <pre><code>{
+  "jsonrpc": "2.0",
+  "method": "zion_sendTransaction",
+  "params": [{
+    "from": "0xSenderAddress",
+    "to": "0xReceiverAddress",
+    "value": "0x1000000000000000",
+    "gas": "0x5208"
+  }],
+  "id": 4
+}</code></pre>
+      </div>
+
+      <h2 id="sacred-library">Sacred Library API</h2>
+      <p>Access 6 ancient wisdom texts (39,036 lines total) via JSON-RPC. All texts stored on IPFS with blockchain references.</p>
+
+      <h3>Available Texts</h3>
+      <ul>
+        <li><strong>cosmic_egg</strong> — 587 lines</li>
+        <li><strong>emerald_tablets</strong> — 6,011 lines</li>
+        <li><strong>dohrman_prophecy</strong> — 11,856 lines</li>
+        <li><strong>omnity_one_love</strong> — 1,445 lines</li>
+        <li><strong>ancient_cipher</strong> — 13,243 lines</li>
+        <li><strong>secrets_of_amenti</strong> — 5,899 lines</li>
+      </ul>
+
+      <h3>Get Text Excerpt</h3>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">json</span><span class="code-title">Request</span></div>
+        <pre><code>{
+  "jsonrpc": "2.0",
+  "method": "sacred_library_get_text",
+  "params": {
+    "text": "emerald_tablets",
+    "tablet": 1,
+    "lines": [1, 50]
+  },
+  "id": 5
+}</code></pre>
+      </div>
+
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">json</span><span class="code-title">Response</span></div>
+        <pre><code>{
+  "jsonrpc": "2.0",
+  "result": {
+    "text": "emerald_tablets",
+    "section": "Tablet I",
+    "content": "I, THOTH, the Atlantean, master of mysteries...",
+    "ipfs_hash": "Qm...",
+    "checksum": "sha256:abc123..."
+  },
+  "id": 5
+}</code></pre>
+      </div>
+
+      <h3>Search Library</h3>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">json</span><span class="code-title">Request</span></div>
+        <pre><code>{
+  "jsonrpc": "2.0",
+  "method": "sacred_library_search",
+  "params": {
+    "query": "consciousness",
+    "texts": ["all"],
+    "limit": 10
+  },
+  "id": 6
+}</code></pre>
+      </div>
+
+      <h3>Get Daily Wisdom</h3>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">json</span><span class="code-title">Request</span></div>
+        <pre><code>{
+  "jsonrpc": "2.0",
+  "method": "sacred_library_daily_wisdom",
+  "params": {},
+  "id": 7
+}</code></pre>
+      </div>
+
+      <p class="note">Sacred Library API is part of ZION OASIS integration.</p>
+
+      <h2 id="ws">WebSocket API</h2>
+      <p>Subscribe to new blocks and events over WebSocket.</p>
+      <div class="code-block">
+        <pre><code>ws://127.0.0.1:8546</code></pre>
+      </div>
+      <p>Protocol details TBD on testnet. Watch the repository for updates.</p>
+
+      <h2 id="errors">Error Codes</h2>
+      <ul>
+        <li><strong>-32601</strong> — Method not found</li>
+        <li><strong>-32602</strong> — Invalid params</li>
+        <li><strong>-32603</strong> — Internal error</li>
+        <li><strong>-32700</strong> — Parse error</li>
+        <li><strong>-32600</strong> — Invalid request</li>
+      </ul>
+
+      <div class="note">API is subject to change during testnet. Check <a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5/releases" target="_blank">release notes</a> for updates.</div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom"><p>&copy; 2025 ZION Blockchain</p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+  <script>
+    // Highlight active TOC items on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.docs-content h2[id]');
+      const sidebarLinks = document.querySelectorAll('.sidebar-sub a');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            sidebarLinks.forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+          }
+        });
+      }, { rootMargin: '-100px 0px -80% 0px' });
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
+</body>
+</html>
+
+        <li><a href="../index.html#features">Features</a></li>        <li><a href="setup.html">Setup</a></li>
+
+  <div class="docs-layout">
+
+    <!-- Sidebar Navigation -->    <div class="section-header">
+
+    <aside class="docs-sidebar">      <h1>API Reference</h1>
+
+      <div class="sidebar-section">      <p>RPC and WebSocket endpoints for interacting with the ZION TestNet.</p>
+
+        <div class="sidebar-section-title">Getting Started</div>    </div>
+
+        <ul class="sidebar-nav">
+
+          <li><a href="getting-started.html">Getting Started</a></li>    <section class="content" id="rpc">
+
+          <li><a href="setup.html">Setup Guide</a></li>      <h2>RPC Endpoints</h2>
+
+        </ul>      <p>Default endpoint (local node): <span class="code-inline">http://127.0.0.1:8545</span></p>
+
+      </div>      
+
+      <h3>Common Methods</h3>
+
+      <div class="sidebar-section">      
+
+        <div class="sidebar-section-title">Core Documentation</div>      <h4>Get Block Number</h4>
+
+        <ul class="sidebar-nav">      <div class="code-block"><code>{
+
+          <li><a href="whitepaper-lite.html">Whitepaper Lite</a></li>  "jsonrpc": "2.0",
+
+          <li><a href="oasis.html">ZION OASIS</a></li>  "method": "zion_blockNumber",
+
+          <li><a href="testnet-info.html">TestNet Info</a></li>  "params": [],
+
+        </ul>  "id": 1
+
+      </div>}</code></div>
+
+
+
+      <div class="sidebar-section">      <h4>Get Block by Number</h4>
+
+        <div class="sidebar-section-title">Mining</div>      <div class="code-block"><code>{
+
+        <ul class="sidebar-nav">  "jsonrpc": "2.0",
+
+          <li><a href="mining-guide.html">Mining Guide</a></li>  "method": "zion_getBlockByNumber",
+
+          <li><a href="consciousness-levels.html">Consciousness Levels</a></li>  "params": ["latest", true],
+
+          <li><a href="pool-setup.html">Pool Setup</a></li>  "id": 2
+
+        </ul>}</code></div>
+
+      </div>
+
+      <h4>Get Balance</h4>
+
+      <div class="sidebar-section">      <div class="code-block"><code>{
+
+        <div class="sidebar-section-title">Reference</div>  "jsonrpc": "2.0",
+
+        <ul class="sidebar-nav">  "method": "zion_getBalance",
+
+          <li><a href="api-reference.html" class="active">API Reference</a>  "params": ["0xYourWalletAddress", "latest"],
+
+            <ul class="sidebar-sub">  "id": 3
+
+              <li><a href="#rpc">RPC Endpoints</a></li>}</code></div>
+
+              <li><a href="#ws">WebSocket API</a></li>
+
+              <li><a href="#errors">Error Codes</a></li>      <h4>Send Transaction</h4>
+
+            </ul>      <div class="code-block"><code>{
+
+          </li>  "jsonrpc": "2.0",
+
+          <li><a href="faq.html">FAQ</a></li>  "method": "zion_sendTransaction",
+
+        </ul>  "params": [{
+
+      </div>    "from": "0xSenderAddress",
+
+    </aside>    "to": "0xReceiverAddress",
+
+    "value": "0x1000000000000000",
+
+    <!-- Main Content -->    "gas": "0x5208"
+
+    <main class="docs-content">  }],
+
+      <h1>API Reference</h1>  "id": 4
+
+      <p class="hero-description" style="font-size:1.125rem;color:var(--text-secondary);margin-bottom:2rem;">RPC and WebSocket endpoints for interacting with the ZION TestNet.</p>}</code></div>
+
+    </section>
+
+      <h2 id="rpc">RPC Endpoints</h2>
+
+      <p>Default endpoint (local node): <span class="code-inline">http://127.0.0.1:8545</span></p>    <section class="content" id="ws">
+
+            <h2>WebSocket API</h2>
+
+      <h3>Get Block Number</h3>      <p>Subscribe to new blocks and events over WebSocket.</p>
+
+      <div class="code-block"><code>{      <div class="code-block"><code>ws://127.0.0.1:8546</code></div>
+
+  "jsonrpc": "2.0",      <p>Protocol details TBD on testnet. Watch the repository for updates.</p>
+
+  "method": "zion_blockNumber",    </section>
+
+  "params": [],
+
+  "id": 1    <section class="content" id="errors">
+
+}</code></div>      <h2>Error Codes</h2>
+
+      <ul>
+
+      <h3>Get Block by Number</h3>        <li><strong>-32601</strong> Method not found</li>
+
+      <div class="code-block"><code>{        <li><strong>-32602</strong> Invalid params</li>
+
+  "jsonrpc": "2.0",        <li><strong>-32603</strong> Internal error</li>
+
+  "method": "zion_getBlockByNumber",      </ul>
+
+  "params": ["latest", true],    </section>
+
+  "id": 2  </main>
+
+}</code></div>
+
+  <footer class="footer">
+
+      <h3>Get Balance</h3>    <div class="container">
+
+      <div class="code-block"><code>{      <div class="footer-bottom"><p>&copy; 2025 ZION Blockchain</p></div>
+
+  "jsonrpc": "2.0",    </div>
+
+  "method": "zion_getBalance",  </footer>
+
+  "params": ["0xYourWalletAddress", "latest"],  <script src="../js/main.js"></script>
+
+  "id": 3</body>
+
+}</code></div></html>
+
+
+      <h3>Send Transaction</h3>
+      <div class="code-block"><code>{
+  "jsonrpc": "2.0",
+  "method": "zion_sendTransaction",
+  "params": [{
+    "from": "0xSenderAddress",
+    "to": "0xReceiverAddress",
+    "value": "0x1000000000000000",
+    "gas": "0x5208"
+  }],
+  "id": 4
+}</code></div>
+
+      <h2 id="ws">WebSocket API</h2>
+      <p>Subscribe to new blocks and events over WebSocket.</p>
+      <div class="code-block"><code>ws://127.0.0.1:8546</code></div>
+      <p>Protocol details TBD on testnet. Watch the repository for updates.</p>
+
+      <h2 id="errors">Error Codes</h2>
+      <ul>
+        <li><strong>-32601</strong> — Method not found</li>
+        <li><strong>-32602</strong> — Invalid params</li>
+        <li><strong>-32603</strong> — Internal error</li>
+      </ul>
+
+      <div class="note">API is subject to change during testnet. Check <a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5/releases" target="_blank">release notes</a> for updates.</div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom"><p>&copy; 2025 ZION Blockchain</p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+  <script>
+    // Highlight active TOC items on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.docs-content h2[id]');
+      const sidebarLinks = document.querySelectorAll('.sidebar-sub a');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            sidebarLinks.forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+          }
+        });
+      }, { rootMargin: '-100px 0px -80% 0px' });
+      
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
+</body>
+</html>

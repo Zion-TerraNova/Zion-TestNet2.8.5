@@ -1,0 +1,53 @@
+{
+  "title": "ZION Wiki",
+  "sections": [
+    {
+      "title": "Start Here",
+      "items": [
+        { "title": "Welcome", "path": "wiki/README.md", "type": "md" },
+        { "title": "Overview", "path": "docs/index.html", "type": "html" },
+        { "title": "Getting Started", "path": "docs/getting-started.html", "type": "html" },
+        { "title": "FAQ", "path": "docs/faq.html", "type": "html" }
+      ]
+    },
+    {
+      "title": "Whitepaper & Major Docs",
+      "items": [
+        { "title": "Whitepaper v2.8.5", "path": "docs/whitepaper/ZION_Whitepaper_v2.8.5.md", "type": "md" },
+        { "title": "COSMIC_MAP (Public Edition)", "path": "docs/whitepaper/COSMIC_MAP_2.8.5_PUBLIC_EDITION.md", "type": "md" },
+        { "title": "Sacred Knowledge (9 Levels)", "path": "docs/whitepaper/SACRED_KNOWLEDGE_2.8.5.md", "type": "md" },
+        { "title": "Humanitarian Tithe", "path": "docs/whitepaper/HUMANITARIAN_TITHE_2.8.5.md", "type": "md" },
+        { "title": "ZION OASIS (MMORPG)", "path": "docs/whitepaper/ZION_OASIS_2.8.5.md", "type": "md" },
+        { "title": "CORE v2.8.5", "path": "docs/whitepaper/CORE_2.8.5.md", "type": "md" },
+        { "title": "VICTORY 2025", "path": "docs/whitepaper/ZION_VICTORY_2025.md", "type": "md" }
+      ]
+    },
+    {
+      "title": "Technical",
+      "items": [
+        { "title": "API Reference", "path": "docs/api-reference.html", "type": "html" },
+        { "title": "Technical Specs", "path": "docs/technical-specs.html", "type": "html" },
+        { "title": "Pool Setup", "path": "docs/pool-setup.html", "type": "html" },
+        { "title": "TestNet Info", "path": "docs/testnet-info.html", "type": "html" },
+        { "title": "Version History", "path": "docs/version-history.html", "type": "html" },
+        { "title": "Roadmap", "path": "docs/roadmap.html", "type": "html" }
+      ]
+    },
+    {
+      "title": "Mining & Consciousness",
+      "items": [
+        { "title": "Mining Guide", "path": "docs/mining-guide.html", "type": "html" },
+        { "title": "Consciousness Levels", "path": "docs/consciousness-levels.html", "type": "html" }
+      ]
+    },
+    {
+      "title": "Full Pages",
+      "items": [
+        { "title": "Whitepaper (Full Viewer)", "path": "whitepaper.html", "type": "html" },
+        { "title": "COSMIC_MAP (Full Viewer)", "path": "cosmic-map.html", "type": "html" },
+        { "title": "OASIS (Full Viewer)", "path": "oasis.html", "type": "html" }
+      ]
+    }
+  ],
+  "default": { "title": "Welcome", "path": "wiki/README.md", "type": "md" }
+}

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Specifications - ZION TestNet</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+    <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                ZION TestNet
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle" aria-expanded="false">Docs <span class="chevron"></span></button>
+                    <div class="dropdown-menu">
+                        <a href="index.html">Overview</a>
+                        <a href="getting-started.html">Getting Started</a>
+                        <a href="setup.html">Setup Guide</a>
+                        <a href="mining-guide.html">Mining Guide</a>
+                        <a href="consciousness-levels.html">Consciousness Levels</a>
+                        <a href="api-reference.html">API Reference</a>
+                        <a href="faq.html">FAQ</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle" aria-expanded="false">Network <span class="chevron"></span></button>
+                    <div class="dropdown-menu">
+                        <a href="testnet-info.html">TestNet Info</a>
+                        <a href="pool-setup.html">Pool Setup</a>
+                        <a href="technical-specs.html">Technical Specs</a>
+                        <a href="version-history.html">Version History</a>
+                        <a href="roadmap.html">Roadmap</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle" aria-expanded="false">OASIS <span class="chevron"></span></button>
+                    <div class="dropdown-menu">
+                        <a href="oasis.html">Overview</a>
+                    </div>
+                </li>
+                <li><a href="../dashboard.html">Dashboard</a></li>
+                <li><a href="https://github.com/Zion-TerraNova/Zion-TestNet2.8.5" target="_blank" class="nav-btn">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+        <div class="docs-layout">
+                <!-- Sidebar -->
+                <aside class="docs-sidebar">
+                    <div class="sidebar-section">
+                        <div class="sidebar-section-title">Contents</div>
+                        <ul class="sidebar-nav">
+                            <li><a href="#overview">Overview</a></li>
+                            <li><a href="#blockchain">Blockchain Core</a></li>
+                            <li><a href="#algorithms">Mining Algorithms</a></li>
+                            <li><a href="#tokenomics">Tokenomics</a></li>
+                            <li><a href="#security">Security</a></li>
+                            <li><a href="#performance">Performance</a></li>
+                            <li><a href="#architecture">Architecture</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content">
+            <header class="docs-header">
+                <h1>⚙️ Technical Specifications</h1>
+                <p class="lead">Deep dive into ZION blockchain architecture and implementation</p>
+            </header>
+
+            <!-- Overview -->
+            <section id="overview" class="docs-section">
+                <h2>Overview</h2>
+                <p>ZION is a next-generation blockchain combining CryptoNote/RandomX foundations with innovative consciousness-based game theory, multi-algorithm mining, and cross-chain capabilities.</p>
+                
+                <div class="info-box info">
+                    <strong>Current Version:</strong> v2.8.5 "Milky Way"<br>
+                    <strong>Genesis Date:</strong> TBD (Mainnet Q2 2027)<br>
+                    <strong>Network Type:</strong> Public TestNet<br>
+                    <strong>Consensus:</strong> Proof-of-Work (Multi-Algorithm)
+                </div>
+            </section>
+
+            <!-- Blockchain Core -->
+            <section id="blockchain" class="docs-section">
+                <h2>Blockchain Core Parameters</h2>
+                
+                <h3>Consensus</h3>
+                <div class="code-block">
+<pre>Type:                  Proof-of-Work (PoW)
+Block Time:            150 seconds (2.5 minutes)
+Difficulty Adjustment: Every 2,016 blocks (~5 weeks)
+Max Block Size:        2 MB
+Transaction Model:     UTXO-based</pre>
+                </div>
+
+                <h3>Supply & Distribution</h3>
+                <div class="code-block">
+<pre>Total Supply:          15,782,857,143 ZION (15.78B)
+Premine:               14,342,857,143 ZION (90.9%)
+Minable Supply:        1,440,000,000 ZION (9.1%)
+Smallest Unit:         1 atomic unit = 10^-6 ZION
+Emission:              Decreasing block reward over time</pre>
+                </div>
+
+                <h3>Block Reward Schedule</h3>
+                <div class="code-block">
+<pre>Base Reward:           5,479.45 ZION per block
+Consciousness Bonus:   1.0x - 15.0x multiplier
+Halvening:             None (smooth emission curve)
+Final Block Reward:    ~1 ZION (asymptotic approach)</pre>
+                </div>
+
+                <h3>Network Ports</h3>
+                <div class="code-block">
+<pre>P2P Network:           8338
+RPC Server:            8339
+Stratum Mining:        3333
+WebSocket:             8340 (optional)</pre>
+                </div>
+            </section>
+
+            <!-- Mining Algorithms -->
+            <section id="algorithms" class="docs-section">
+                <h2>Mining Algorithms</h2>
+                
+                <h3>Supported Algorithms (ASIC-Resistant)</h3>
+                
+                <h4>1. Cosmic Harmony (Native)</h4>
+                <div class="code-block">
+<pre>Type:              Multi-hash PoW
+Memory:            Moderate (512 MB minimum)
+CPU Performance:   19,000 H/s (Python) → 100,000-500,000 H/s (native)
+GPU Performance:   850 MH/s (RTX 3080 OpenCL)
+ASIC Resistance:   95% higher than SHA256
+Power Efficiency:  2.66 MH/W</pre>
+                </div>
+                <p><strong>Default algorithm.</strong> Native ZION implementation combining multiple hash functions (SHA-256, Keccak-256, Blake2b, SHA3-512) with state mixing for ASIC resistance.</p>
+
+                <h4>2. RandomX (CPU-Optimized)</h4>
+                <div class="code-block">
+<pre>Type:              CPU-optimized PoW
+Memory:            2 GB+ recommended
+CPU Performance:   80,000 H/s (baseline) → 2,000-10,000 H/s (native)
+ASIC Resistance:   Extreme (designed for general-purpose CPUs)
+Power Efficiency:  Optimal on modern x86-64 CPUs</pre>
+                </div>
+                <p>Based on Monero's RandomX, optimized for CPU mining with large memory requirements that make ASIC development economically unfeasible.</p>
+
+                <h4>3. YesCrypt (Memory-Hard)</h4>
+                <div class="code-block">
+<pre>Type:              Memory-hard PoW
+Memory:            1 GB+ required
+CPU Performance:   7,000 H/s (baseline) → 500-2,000 H/s (optimized)
+Energy Efficiency: Very high (low power consumption)
+ASIC Resistance:   High (memory bandwidth bottleneck)</pre>
+                </div>
+                <p>Memory-hard algorithm that provides excellent ASIC resistance through high memory bandwidth requirements. Eco-friendly bonus in consciousness mining.</p>
+
+                <h4>4. Autolykos v2 (GPU-Friendly)</h4>
+                <div class="code-block">
+<pre>Type:              Memory-hard GPU PoW
+Memory:            4 GB+ GPU VRAM
+GPU Performance:   25-30 MH/s (AMD RX 5600 XT)
+                   170,000 H/s (baseline) → 10,000-50,000 H/s (optimized)
+ASIC Resistance:   High (memory access patterns)
+Power Efficiency:  Good on modern GPUs</pre>
+                </div>
+                <p>Ergo's GPU algorithm providing memory-hard PoW that's efficient on modern GPUs while maintaining ASIC resistance.</p>
+
+                <h3>Algorithm Selection Priority</h3>
+                <ol>
+                    <li><strong>Cosmic Harmony:</strong> Default, best for native ZION miners</li>
+                    <li><strong>RandomX:</strong> CPU miners, high ASIC resistance</li>
+                    <li><strong>YesCrypt:</strong> Energy-efficient mining, eco-friendly</li>
+                    <li><strong>Autolykos v2:</strong> GPU miners with 4GB+ VRAM</li>
+                </ol>
+            </section>
+
+            <!-- Tokenomics -->
+            <section id="tokenomics" class="docs-section">
+                <h2>Tokenomics & Distribution</h2>
+                
+                <h3>Premine Allocation (14.34B ZION)</h3>
+                <div class="code-block">
+<pre>Mining Operators:          8,250,000,000 ZION (57.5%)
+  ├─ Sacred (CL3):         2,000,000,000 ZION
+  ├─ Quantum (CL4):        2,000,000,000 ZION
+  ├─ Cosmic (CL5):         2,000,000,000 ZION
+  ├─ Enlightened (CL6):    1,000,000,000 ZION
+  └─ Transcendent (CL7):   1,250,000,000 ZION
+
+DAO Winners Reserve:       1,750,000,000 ZION (12.2%)
+  ├─ Golden Egg:           1,000,000,000 ZION (unlock Oct 10, 2035)
+  └─ XP Leaderboard:         750,000,000 ZION
+
+Infrastructure Fund:       4,340,000,000 ZION (30.3%)
+  ├─ Maitreya Buddha:      1,000,000,000 ZION (DAO admin, 70%→0% by 2045)
+  ├─ OASIS Development:    1,440,000,000 ZION (3-year vest 2026-2028)
+  ├─ Network (SÍTA):       1,000,000,000 ZION
+  └─ Children Fund:          900,000,000 ZION</pre>
+                </div>
+
+                <h3>Sacred Trinity Distribution</h3>
+                <div class="info-box warning">
+                    <strong>Humanitarian Tithe Structure:</strong>
+                    <ul>
+                        <li><strong>Rama (Yeshuae):</strong> 0.33% Genesis Creator Rent</li>
+                        <li><strong>Síta (Issobela):</strong> 60% humanitarian (education, healthcare, welfare)</li>
+                        <li><strong>Hanuman:</strong> 40% humanitarian (environment, forests, oceans)</li>
+                    </ul>
+                </div>
+
+                <h3>Consciousness Mining Rewards</h3>
+                <div class="code-block">
+<pre>Level              Multiplier   Reward (base 5,479.45 ZION)
+PHYSICAL (CL1)     1.0x         5,479.45 ZION
+EMOTIONAL (CL2)    1.5x         8,219.18 ZION
+MENTAL (CL3)       2.0x         10,958.90 ZION
+SACRED (CL4)       3.0x         16,438.35 ZION
+QUANTUM (CL5)      4.0x         21,917.80 ZION
+COSMIC (CL6)       5.0x         27,397.25 ZION
+ENLIGHTENED (CL7)  7.5x         41,095.88 ZION
+TRANSCENDENT (CL8) 10.0x        54,794.50 ZION
+ON_THE_STAR (CL9)  15.0x        82,191.75 ZION</pre>
+                </div>
+
+                <h3>XP Progression System</h3>
+                <ul>
+                    <li><strong>10 XP per share</strong> submitted to mining pool</li>
+                    <li><strong>1,000 XP per block</strong> found</li>
+                    <li><strong>Level thresholds:</strong> Exponential (e.g., CL2 = 10k XP, CL3 = 50k XP, CL4 = 250k XP...)</li>
+                    <li><strong>Divine bonuses:</strong> Eco-friendly algorithms get extra XP multipliers</li>
+                </ul>
+            </section>
+
+            <!-- Security -->
+            <section id="security" class="docs-section">
+                <h2>Security Architecture</h2>
+                
+                <h3>Binary-Only Distribution (v2.8.5)</h3>
+                <div class="info-box warning">
+                    <strong>Critical Security Measure:</strong> Public repository distributes only compiled binaries to protect 15.78B ZION premine addresses and genesis logic.
+                </div>
+
+                <h4>Security Benefits</h4>
+                <ul>
+                    <li>✅ Premine addresses not visible in source code</li>
+                    <li>✅ Genesis block logic protected from reverse engineering</li>
+                    <li>✅ Algorithm implementations obfuscated</li>
+                    <li>✅ Private key derivation paths secured</li>
+                    <li>✅ Minimal attack surface (no Python runtime in production)</li>
+                </ul>
+
+                <h4>Binary Specifications</h4>
+                <div class="code-block">
+<pre>zion-node:     ~26 MB (blockchain + RPC server)
+zion-pool:     ~23 MB (Stratum mining pool)
+zion-cli:      ~17 MB (command-line wallet)
+
+Build Tool:    PyInstaller
+Format:        ELF (Linux), Mach-O (macOS), PE (Windows)
+Protection:    Code obfuscation, stripped symbols</pre>
+                </div>
+
+                <h3>Cryptographic Primitives</h3>
+                <div class="code-block">
+<pre>Hash Functions:    SHA-256, SHA3-256, Keccak-256, Blake2b
+Signatures:        Ed25519 (EdDSA)
+Key Derivation:    PBKDF2, Argon2id
+Random Generation: secrets.SystemRandom (CSPRNG)
+HD Wallets:        BIP-32/39/44 (planned v2.9.0)</pre>
+                </div>
+
+                <h3>Network Security</h3>
+                <ul>
+                    <li><strong>TLS/SSL:</strong> HTTPS for RPC, WSS for WebSocket</li>
+                    <li><strong>Firewall:</strong> UFW configured on production servers</li>
+                    <li><strong>SSH:</strong> Key-only authentication (password disabled)</li>
+                    <li><strong>Rate Limiting:</strong> DDoS protection on RPC endpoints</li>
+                    <li><strong>Input Validation:</strong> Strict parameter checking on all APIs</li>
+                </ul>
+
+                <h3>Planned Security Enhancements (v2.9.0)</h3>
+                <div class="checklist">
+                    <li class="pending">🔒 Replace ecdsa library (Minerva timing attack vulnerability)</li>
+                    <li class="pending">💳 Hardware wallet support (Ledger, Trezor)</li>
+                    <li class="pending">🔐 Multi-signature wallets (M-of-N)</li>
+                    <li class="pending">🛡️ External security audit (professional firm)</li>
+                    <li class="pending">📜 Formal verification of critical components</li>
+                </ul>
+            </section>
+
+            <!-- Performance -->
+            <section id="performance" class="docs-section">
+                <h2>Performance Metrics</h2>
+                
+                <h3>Current Performance (v2.8.5)</h3>
+                <div class="code-block">
+<pre>Transactions/Second:   ~5-10 TPS (testnet)
+Block Propagation:     ~2-5 seconds (global network)
+RPC Response Time:     <100ms (local), <500ms (remote)
+Database:              SQLite (WAL mode planned v2.9.0)
+Memory Usage:          ~512 MB (node) + algorithm memory</pre>
+                </div>
+
+                <h3>Stratum Pool Performance</h3>
+                <div class="code-block">
+<pre>Share Processing:      <1ms (Fast-ACK architecture)
+Concurrent Miners:     100+ (single pool instance)
+Share Acceptance:      18-25% (testnet difficulty)
+Duplicate Detection:   ~80% caught (normal for fast GPUs)
+Database Errors:       0% (SQLite retry wrapper)</pre>
+                </div>
+
+                <h3>Scaling Targets</h3>
+                <ul>
+                    <li><strong>v2.9.0:</strong> 10-100x hashrate (native libraries), <500ms block propagation</li>
+                    <li><strong>Mainnet:</strong> 50+ TPS, 1000+ concurrent miners per pool</li>
+                    <li><strong>OASIS Launch:</strong> 100,000+ concurrent game players</li>
+                </ul>
+
+                <h3>Optimization Roadmap</h3>
+                <div class="checklist">
+                    <li class="pending">⚡ Native library compilation (C++, Rust)</li>
+                    <li class="pending">💾 PostgreSQL migration option (high-throughput)</li>
+                    <li class="pending">🌐 P2P compact blocks (<500ms propagation)</li>
+                    <li class="pending">🔗 Multi-threaded validation</li>
+                    <li class="pending">📊 Horizontal pool scaling (load balancer)</li>
+                </ul>
+            </section>
+
+            <!-- Architecture -->
+            <section id="architecture" class="docs-section">
+                <h2>System Architecture</h2>
+                
+                <h3>Core Components</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <strong>Blockchain Core</strong>
+                        <p>UTXO model, PoW consensus, difficulty adjustment</p>
+                    </div>
+                    <div class="tech-item">
+                        <strong>Mining Pool</strong>
+                        <p>Stratum v1, multi-algorithm, consciousness game hooks</p>
+                    </div>
+                    <div class="tech-item">
+                        <strong>RPC Server</strong>
+                        <p>JSON-RPC 2.0, HTTP/HTTPS, wallet operations</p>
+                    </div>
+                    <div class="tech-item">
+                        <strong>P2P Network</strong>
+                        <p>Peer discovery, block broadcasting, gossip protocol</p>
+                    </div>
+                    <div class="tech-item">
+                        <strong>WARP Engine</strong>
+                        <p>Multi-pool orchestration, AI-based switching</p>
+                    </div>
+                    <div class="tech-item">
+                        <strong>Database</strong>
+                        <p>SQLite (current), PostgreSQL (planned)</p>
+                    </div>
+                </div>
+
+                <h3>Technology Stack</h3>
+                <div class="code-block">
+<pre>Language:          Python 3.10+
+Async Framework:   asyncio, aiohttp
+Database:          SQLite3 (WAL mode)
+Mining:            PyOpenCL (GPU), multiprocessing (CPU)
+Networking:        socket, asyncio.Protocol
+Cryptography:      hashlib, secrets, ecdsa (→cryptography in v2.9.0)
+Web:               Next.js 14.2.5, React 18.3, TypeScript 5.4
+Deployment:        Docker, Kubernetes, systemd</pre>
+                </div>
+
+                <h3>Cross-Chain Architecture (v2.9.0+)</h3>
+                <div class="code-block">
+<pre>ZION Core (CryptoNote/RandomX)
+    │
+    ├─ Solana Bridge (Anchor, SPL tokens)
+    ├─ Stellar Bridge (XLM, humanitarian payments)
+    ├─ Cardano Bridge (Plutus, formal verification)
+    └─ Tron Bridge (TRC-20, gaming/content)
+
+Bridge Security:
+  - 5-of-7 multi-sig validators
+  - Time-locked transactions
+  - Atomic swaps (HTLC)
+  - Liquidity pools ($1M+ target)</pre>
+                </div>
+
+                <h3>OASIS Integration</h3>
+                <div class="code-block">
+<pre>Game Engine:       Unreal Engine 5.4
+Graphics:          Nanite, Lumen, MetaHumans
+Blockchain Link:   JSON-RPC API, WebSocket
+NFT Platform:      Solana (minted) → bridged to ZION
+In-Game Currency:  ZION (1:1 with blockchain)
+Sacred Library:    IPFS storage + on-chain index</pre>
+                </div>
+
+                <h3>Deployment Architecture</h3>
+                <div class="code-block">
+<pre>Production Server: zionterranova.com (91.98.122.165)
+  ├─ HTTPS (Let's Encrypt SSL)
+  ├─ UFW Firewall (ports 8338, 8339, 3333)
+  ├─ systemd service (auto-restart)
+  ├─ Daily backups (7-day retention)
+  └─ Monitoring (planned: Prometheus + Grafana)
+
+Docker Deployment:
+  ├─ Debian bookworm-slim base
+  ├─ Read-only filesystem
+  ├─ Non-root user (zion)
+  ├─ Security: no-new-privileges flag
+  └─ Health checks (HTTP /health endpoint)</pre>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../js/docs.js"></script>
+</body>
+</html>
