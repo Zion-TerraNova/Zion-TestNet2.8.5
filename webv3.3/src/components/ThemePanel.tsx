@@ -59,7 +59,7 @@ export default function ThemePanel({
   setAladinFov,
 }: ThemePanelProps) {
   const [collapsed, setCollapsed] = useState(false);
-  const [minimized, setMinimized] = useState(false);
+  const [minimized, setMinimized] = useState(true);
   const { theme, setTheme, lang, setLang } = useThemeLang();
 
   if (minimized) {
