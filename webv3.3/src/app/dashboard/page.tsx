@@ -14,72 +14,72 @@ const Starfield = dynamic(() => import("@/components/ThreeStarfield"), { ssr: fa
 
 const NETWORK_KPIS = [
   {
-    label: "Aktuální blok",
-    value: "#1,482,211",
-    delta: "+512 bloků / 24 h",
+    label: "Aktuální verze",
+    value: "v2.8.9",
+    delta: "Polish Sprint COMPLETE ✅",
   },
   {
-    label: "Průměrná propagace",
-    value: "0.62 s",
-    delta: "cílový limit 0.50 s (v2.8.7)",
+    label: "Test Coverage",
+    value: "400+ tests",
+    delta: "90% coverage target (unit + integration + E2E)",
   },
   {
-    label: "Hashrate (testnet)",
-    value: "128 GH/s",
-    delta: "+18 % týdně",
+    label: "Type Safety",
+    value: "100%",
+    delta: "8 core modules, mypy strict mode PASSED",
   },
   {
-    label: "Aktivní uzly",
-    value: "86",
-    delta: "cílový stav 100+ (Q4 2025)",
+    label: "Security Status",
+    value: "LOW RISK",
+    delta: "0 critical/high vulnerabilities",
   },
 ];
 
 const BRIDGE_OBJECTIVES = [
   {
-    chain: "Solana",
-    window: "Q1 2026",
-    status: "Blueprint hotový, Anchor prototyp ve vývoji",
+    chain: "WARP 2 Engine",
+    window: "Q1-Q2 2026",
+    status: "Cross-chain bridges: BTC, ETH, SOL, XLM - Blueprint complete",
     link: "/docs/whitepaper/roadmap",
   },
   {
-    chain: "Stellar",
+    chain: "Security Hardening",
     window: "Q2 2026",
-    status: "Humanitarian bridge – API návrh schválen",
+    status: "Cryptography migration + Hardware wallets - $2M budget",
     link: "/docs/integration-web33",
   },
   {
-    chain: "Cardano",
-    window: "Q3 2026",
-    status: "Plutus proof-of-concept naplánovaný",
+    chain: "AI Orchestrator v3.0",
+    window: "Q4 2026",
+    status: "Advanced mining intelligence - TensorFlow/PyTorch integration",
     link: "/docs/legacy",
   },
 ];
 
 const PIPELINE = [
   {
-    version: "2.8.6",
-    codename: "Stability",
-    focus: "Docker stack, health checks, logging",
-    status: "Probíhá QA",
-  },
-  {
-    version: "2.8.7",
-    codename: "Performance",
-    focus: "RPC cache, DB optimalizace, P2P relay",
-    status: "Příprava sprintu",
-  },
-  {
-    version: "2.8.8",
-    codename: "Features",
-    focus: "WebSocket API, miner analytics, Swagger",
-    status: "Backlog připraven",
-  },
-  {
     version: "2.8.9",
     codename: "Polish",
-    focus: "Test coverage 90 %, audit checklist",
-    status: "Plánované",
+    focus: "400+ tests, type hints, black+isort, security audit",
+    status: "✅ COMPLETE (Nov 10, 2025)",
+  },
+  {
+    version: "2.9.0",
+    codename: "Quantum Leap",
+    focus: "WARP 2 Engine, Security, Performance (50-100x speedup)",
+    status: "Q1-Q4 2026 - $6.5M budget",
+  },
+  {
+    version: "2.9.x",
+    codename: "DAO 2.0",
+    focus: "On-chain voting, Treasury, Governance",
+    status: "Q1 2027 - Community-driven",
+  },
+  {
+    version: "3.0.0",
+    codename: "ZION OASIS",
+    focus: "AAA MMORPG Launch - 50+ avatars, 7 continents",
+    status: "Q1 2029 - $50M budget",
   },
 ];
 
