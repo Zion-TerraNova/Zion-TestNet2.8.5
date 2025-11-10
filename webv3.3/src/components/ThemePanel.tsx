@@ -1,7 +1,18 @@
 "use client";
 
 import { type Dispatch, type SetStateAction, useState } from "react";
-import { Star, Image as ImageIcon, Telescope, Sparkle, CloudMoon, ToggleLeft, ToggleRight, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  Star,
+  Image as ImageIcon,
+  Telescope,
+  Sparkle,
+  CloudMoon,
+  ToggleLeft,
+  ToggleRight,
+  ChevronDown,
+  ChevronUp,
+  PanelLeftClose,
+} from "lucide-react";
 import clsx from "clsx";
 import { useThemeLang } from "@/context/ThemeLangContext";
 
@@ -48,7 +59,22 @@ export default function ThemePanel({
   setAladinFov,
 }: ThemePanelProps) {
   const [collapsed, setCollapsed] = useState(false);
+  const [minimized, setMinimized] = useState(false);
   const { theme, setTheme, lang, setLang } = useThemeLang();
+
+  if (minimized) {
+    return (
+      <button
+        type="button"
+        onClick={() => setMinimized(false)}
+        className="pointer-events-auto fixed bottom-6 right-6 z-30 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/70 px-4 py-3 text-sm font-semibold uppercase tracking-[0.24em] text-white/70 shadow-glow-cyan backdrop-blur transition hover:border-matrix-cyan/60 hover:text-white"
+        aria-label="Otevřít ovládání vzhledu"
+      >
+        <Sparkle className="h-4 w-4 text-matrix-cyan" />
+        Theme
+      </button>
+    );
+  }
 
   return (
     <aside
@@ -64,14 +90,24 @@ export default function ThemePanel({
           <Sparkle className="h-4 w-4 text-matrix-cyan" />
           <span className="text-sm font-semibold uppercase tracking-[0.24em] text-white/60">Theme</span>
         </div>
-        <button
-          type="button"
-          onClick={() => setCollapsed((prev) => !prev)}
-          className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white/70 transition hover:border-matrix-cyan/60 hover:text-white"
-          aria-label={collapsed ? "Otevřít panel" : "Skrýt panel"}
-        >
-          {collapsed ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setCollapsed((prev) => !prev)}
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white/70 transition hover:border-matrix-cyan/60 hover:text-white"
+            aria-label={collapsed ? "Otevřít panel" : "Skrýt panel"}
+          >
+            {collapsed ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+          </button>
+          <button
+            type="button"
+            onClick={() => setMinimized(true)}
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white/70 transition hover:border-matrix-cyan/60 hover:text-white"
+            aria-label="Minimalizovat panel"
+          >
+            <PanelLeftClose className="h-4 w-4" />
+          </button>
+        </div>
       </div>
 
       {collapsed ? (
